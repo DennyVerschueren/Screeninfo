@@ -1,0 +1,55 @@
+body {
+    color: #222;
+    font-family: "Axiforma",arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    position: relative;
+}
+
+div {
+    display: block;
+}
+
+.festival {
+    background-color: #f28629;
+    color: #fff;
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+figure {
+    display: block;
+    margin: 0;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.festival .festivalContent {
+    background-color: #f28629;
+}
+
+.festivalContent {
+    background-color: #f28629;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.date {
+    padding-bottom: 1.25em;
+    color: #FFD31C;
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+.nameFestival {
+    font-size: 2.3em;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
+}
