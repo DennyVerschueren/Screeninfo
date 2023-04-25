@@ -132,3 +132,22 @@ figure {
 }
 
 
+
+
+
+/*? maanrock background */
+
+.festival-maanrock .festival-content {
+    background-color: #253679;
+    /* background-image: url(/sites/all/themes/dzivm/assets/images/tiles/maanrock.svg),none; */
+    /* background-position: left top; */
+    /* background-size: auto 63%; */
+    /* background-repeat: no-repeat; */
+}
+
+.festival-cover-maanrock {
+    background-color: #253679;
+}
+
+
+
