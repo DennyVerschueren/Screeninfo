@@ -7,16 +7,15 @@
 </head>
 <body>
 <p>map html test</p>
-<img th:src="@{/img/MapPlaceHolder.png}" alt="Test" usemap="#testmap" width="400" height="400">
-<map name="testmap">
-    <area shape="rect" coords="34,44,270,350" th:src="@{/img/cubeTest.png}" alt="Test1" href="">
-    <img th:src="@{/img/cubeTest.png}" alt="test img" coords="34,44,270,350">
-    <area shape="rect" coords="290,172,333,250" alt="Test2" href="">
-    <area shape="circle" coords="337,300,44" alt="Test3" href="">
-
     <svg height="210" width="400">
-        <path d="M 15 100 L70 200 L70 205 L15 105 Z M 30 30 L20 20 L 30 20 Z" />
-        <path d="M 110 110 L 150 150 L 110 150 Z"/>
+        <path d="M 15 100 L70 200 L70 205 L15 105 Z
+  			M 15 100 L170 100 L172 102 L12 102 Z
+            M 70 200 L225 200 L227 202 L72 202 Z
+            M 225 200 L170 100 L174 104 L229 204 Z
+            M 170 100 L70 200 L73 203 L173 103 Z" />
+        <a href="https://www.dezomerisvanmechelen.be/">
+            <circle id="pointA" cx="35" cy="90" r="5" />
+        </a>
     </svg>
 </map>
 
