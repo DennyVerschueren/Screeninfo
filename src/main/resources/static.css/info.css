@@ -12,6 +12,10 @@ div {
 }
 
 
+.events{
+    display: block;
+}
+
 
 .festival {
     background-color: #f28629;
@@ -55,7 +59,7 @@ img {
     transition: all 0.25s ease;
 }
 
-.date {
+.festival-date {
     padding-bottom: 1.25em;
     color: #FFD31C;
     font-size: 1.5em;
@@ -77,9 +81,7 @@ h3 {
     float: right;
 }
 
-.festival-foto, .festival-content {
-    width: 50%;
-}
+
 figure {
     margin: 0;
 }
@@ -94,6 +96,9 @@ figure {
     right: 0;
 }
 
+.festival-cover, .festival-content {
+    width: 50%;
+}
 
 .festival-link {
     color: #fff;
@@ -111,3 +116,19 @@ figure {
     right: 40px;
     bottom: 30px;
 }
+
+/*! parkpop background  */
+
+.festival-parkpop .festival-content {
+    background-color: #6FB746;
+    /*background-image: url(/sites/all/themes/dzivm/assets/images/tiles/parkpop.svg),none;*/
+    background-position: left top;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+.festival-cover-parkpop {
+    background-color: #6FB746;
+}
+
+
