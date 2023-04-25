@@ -1,3 +1,4 @@
+
 body {
     color: #222;
     font-family: "Axiforma",arial,sans-serif;
@@ -10,17 +11,29 @@ div {
     display: block;
 }
 
+
+
 .festival {
     background-color: #f28629;
     color: #fff;
+}
+
+.festival {
     position: relative;
     float: left;
     width: 50%;
 }
 
 figure {
-    display: block;
     margin: 0;
+}
+
+figure {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
 }
 
 img {
@@ -30,15 +43,16 @@ img {
     width: auto;
 }
 
-.festival .festivalContent {
+.festival .festival-content {
     background-color: #f28629;
 }
 
-.festivalContent {
+.festival-content {
     background-color: #f28629;
     position: absolute;
     top: 0;
     bottom: 0;
+    transition: all 0.25s ease;
 }
 
 .date {
@@ -46,10 +60,54 @@ img {
     color: #FFD31C;
     font-size: 1.5em;
     font-weight: 900;
+    letter-spacing: 0.08em;
 }
 
-.nameFestival {
+.festival-name {
     font-size: 2.3em;
     text-transform: lowercase;
     letter-spacing: 0.08em;
+}
+
+h3 {
+    display: block;
+}
+
+.festival:nth-child(4n+1) .festival-cover, .festival:nth-child(4n+2) .festival-cover {
+    float: right;
+}
+
+.festival-foto, .festival-content {
+    width: 50%;
+}
+figure {
+    margin: 0;
+}
+
+
+.festival-contentInner {
+    top: 50%;
+    display: block;
+    padding: 20px 30px 20px 20px;
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+
+
+.festival-link {
+    color: #fff;
+}
+
+.more {
+    color: #fff;
+    font-size: 0.9em;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+
+.festival-moreinfo {
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
 }
