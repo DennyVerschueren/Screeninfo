@@ -12,16 +12,19 @@ public class Spot {
     @Id
     private Integer id;
     private String spotType;
-    private float mapCorndinaatX;
-    private float mapCorndinaatY;
+    private float mapCordinatX;
+    private float mapCordinatY;
 
     private String spotName;
     private String shortInfo;
     private String adress;
-    private Date date;
+    private Date startDate;
     private String extraLink;
 
 
+    public Spot(){
+
+    }
 
     public Integer getId() {
         return id;
@@ -35,17 +38,17 @@ public class Spot {
     public void setSpotType(String spotType) {
         this.spotType = spotType;
     }
-    public float getMapCorndinaatX() {
-        return mapCorndinaatX;
+    public float getMapCordinatX() {
+        return mapCordinatX;
     }
-    public void setMapCorndinaatX(float mapCorndinaatX) {
-        this.mapCorndinaatX = mapCorndinaatX;
+    public void setMapCordinatX(float mapCordinatX) {
+        this.mapCordinatX = mapCordinatX;
     }
-    public float getMapCorndinaatY() {
-        return mapCorndinaatY;
+    public float getMapCordinatY() {
+        return mapCordinatY;
     }
-    public void setMapCorndinaatY(float mapCorndinaatY) {
-        this.mapCorndinaatY = mapCorndinaatY;
+    public void setMapCordinatY(float mapCordinatY) {
+        this.mapCordinatY = mapCordinatY;
     }
     public String getSpotName() {
         return spotName;
@@ -65,11 +68,11 @@ public class Spot {
     public void setAdress(String adress) {
         this.adress = adress;
     }
-    public Date getDate() {
-        return date;
+    public Date getStartDate() {
+        return startDate;
     }
-    public void setDate(Date date) {
-        this.date = date;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
     public String getExtraLink() {
         return extraLink;
