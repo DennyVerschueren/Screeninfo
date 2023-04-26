@@ -152,3 +152,18 @@ figure {
 
 
 
+
+@media only screen and (max-width: 690px){
+
+    .events{
+        display: grid;
+    }
+
+    .festival {
+        float: none;
+        width: auto;
+    }
+
+}
+
+
