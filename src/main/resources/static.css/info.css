@@ -77,7 +77,7 @@ h3 {
     display: block;
 }
 
-.festival:nth-child(4n+1) .festival-cover, .festival:nth-child(4n+2) .festival-cover {
+.festival:nth-child(4n+1) .festival-cover, .festival:nth-child(4n+2) .festival-cover, .festival:nth-child(4n+3) .festival-cover {
     float: right;
 }
 
@@ -122,9 +122,9 @@ figure {
 .festival-parkpop .festival-content {
     background-color: #6FB746;
     /*background-image: url(/sites/all/themes/dzivm/assets/images/tiles/parkpop.svg),none;*/
-    background-position: left top;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
+    /*background-position: left top;*/
+    /*background-size: auto 100%;*/
+    /*background-repeat: no-repeat;*/
 }
 
 .festival-cover-parkpop {
@@ -147,7 +147,7 @@ figure {
 
 .festival-cover-maanrock {
     background-color: #253679;
-    float: right;
+    /*float: right;*/
 }
 
 
