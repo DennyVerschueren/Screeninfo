@@ -7,15 +7,16 @@
 </head>
 <body>
 <p>map html test</p>
-    <svg height="210" width="400">
+    <svg height="400" width="400">
         <path d="M 15 100 L70 200 L70 205 L15 105 Z
   			M 15 100 L170 100 L172 102 L12 102 Z
             M 70 200 L225 200 L227 202 L72 202 Z
             M 225 200 L170 100 L174 104 L229 204 Z
             M 170 100 L70 200 L73 203 L173 103 Z" />
-        <a href="https://www.dezomerisvanmechelen.be/">
-            <circle id="pointA" cx="35" cy="90" r="5" />
-        </a>
+            <a th:each="spot:${spots}" th:href="${spot.extraLink}">
+                <circle id="pointA" th:cx="${spot.mapCordinatX}" th:cy="${spot.mapCordinatY}" r="5" />
+            </a>
+
     </svg>
 </map>
 
