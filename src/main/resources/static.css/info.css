@@ -28,6 +28,14 @@ div {
     width: 50%;
 }
 
+.festival:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: all 0.25s ease;
+    transition-duration: 0.25s;
+    opacity: 0.85;
+}
+
 figure {
     margin: 0;
 }
