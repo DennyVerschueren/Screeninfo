@@ -159,6 +159,12 @@ figure {
 }
 
 
+/*! koopzondagen */
+
+.festival-koopzondag .festival-content {
+    background-color: rgb(197, 163, 197);
+}
+
 
 
 @media only screen and (max-width: 690px){
