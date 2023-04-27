@@ -7,3 +7,16 @@ insert into SPOT(
     ID,SPOT_TYPE,MAP_CORDINATX,MAP_CORDINATY,SPOT_NAME,SHORT_INFO,ADRESS,START_DATE,EXTRA_LINK)
 VALUES (
            2,'FESTIVAL',176,256,'de Koer','DE KOER zal dit jaar niet meer op Maanrock staan, maar krijgt zijn eigen festival','Cultuurplein Mechelen','2023-04-04','https://www.dezomerisvanmechelen.be/evenement/de-koer/info');
+
+insert into SPOT(
+    ID,SPOT_TYPE,MAP_CORDINATX,MAP_CORDINATY,SPOT_NAME,SHORT_INFO,ADRESS)
+VALUES (
+           3,'TOILET',75,90,'wc kot','een publiek toilet','NekerpoelPlein');
+
+insert into SPOT(
+    ID,SPOT_TYPE,MAP_CORDINATX,MAP_CORDINATY,SPOT_NAME,SHORT_INFO,ADRESS)
+VALUES (
+           4,'VOEDSELKRAAM',35,180,'HotDog Jho','een klein kraampje','KappersLaan');
+
+
+

@@ -14,7 +14,7 @@
             M 225 200 L170 100 L174 104 L229 204 Z
             M 170 100 L70 200 L73 203 L173 103 Z" />
             <a th:each="spot:${spots}" th:href="${spot.extraLink}">
-                <circle id="pointA" th:cx="${spot.mapCordinatX}" th:cy="${spot.mapCordinatY}" r="5" />
+                <circle id="pointA" th:cx="${spot.mapCordinatX}" th:cy="${spot.mapCordinatY}" r="5" fill="red" />
             </a>
 
     </svg>
