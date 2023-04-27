@@ -13,9 +13,15 @@
             M 70 200 L225 200 L227 202 L72 202 Z
             M 225 200 L170 100 L174 104 L229 204 Z
             M 170 100 L70 200 L73 203 L173 103 Z" />
-            <a th:each="spot:${spots}" th:href="${spot.extraLink}">
-                <circle id="pointA" th:cx="${spot.mapCordinatX}" th:cy="${spot.mapCordinatY}" r="5" fill="red" />
-            </a>
+        <a th:each="toillete:${toilletes}" th:href="${toillete.extraLink}">
+            <circle id="pointA" th:cx="${toillete.mapCordinatX}" th:cy="${toillete.mapCordinatY}" r="5" fill="#0022ff" />
+        </a>
+        <a th:each="festival:${festivals}" th:href="${festival.extraLink}">
+            <circle id="pointA" th:cx="${festival.mapCordinatX}" th:cy="${festival.mapCordinatY}" r="5" fill="#932222" />
+        </a>
+        <a th:each="voedselKraampje:${voedselKraampjes}" th:href="${voedselKraampje.extraLink}">
+            <circle id="pointA" th:cx="${voedselKraampje.mapCordinatX}" th:cy="${voedselKraampje.mapCordinatY}" r="5" fill="#218630" />
+        </a>
 
     </svg>
 </map>
