@@ -85,7 +85,7 @@ h3 {
     display: block;
 }
 
-.festival:nth-child(4n+1) .festival-cover, .festival:nth-child(4n+2) .festival-cover, .festival:nth-child(4n+3) .festival-cover {
+.festival:nth-child(4n+1) .festival-cover, .festival:nth-child(4n+2) .festival-cover, .festival:nth-child(4n+3) .festival-cover,.festival:nth-child(4n+4) .festival-cover {
     float: right;
 }
 
@@ -165,6 +165,9 @@ figure {
     background-color: rgb(197, 163, 197);
 }
 
+.festival-cover-koopzondag{
+    background-color: rgb(197, 163, 197);
+}
 
 
 @media only screen and (max-width: 690px){
