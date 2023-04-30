@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 
 @Entity
 public class EndUser {
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
-    @SequenceGenerator(name = "user_generator", sequenceName = "user_seq", allocationSize = 1)
+    @SequenceGenerator(name = "UserSeqGen", sequenceName = "UserSeq", initialValue = 5, allocationSize = 1)
+    @GeneratedValue(generator = "UserSeqGen")
     @Id
     private Integer id;
     private String username;
@@ -51,7 +51,6 @@ public class EndUser {
         this.id = id;
     }
 
-    @Id
     public Integer
     getId() {
         return id;

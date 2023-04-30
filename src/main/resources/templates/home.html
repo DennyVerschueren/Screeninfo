@@ -9,13 +9,13 @@
 <h1>HALLO</h1>
 <div sec:authorize="!isAuthenticated()">
     <div>
-        <a class="buttonLook menuButton" href="/register">register</a>
-        <a class="buttonLook menuButton" href="/login">login</a>
+        <a class="buttonLook menuButton" href="/signup">Sign Up</a>
+        <a class="buttonLook menuButton" href="/login">Login</a>
     </div>
 </div>
 <div sec:authorize="isAuthenticated()">
     <div>
-        <a class="buttonLook menuButton" href="/logout">logout</a>
+        <a class="buttonLook menuButton" href="/logout">Logout</a>
     </div>
 </div>
 </body>
