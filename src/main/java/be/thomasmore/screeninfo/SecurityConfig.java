@@ -20,14 +20,17 @@ public class SecurityConfig {
     @Autowired
     private DataSource dataSource;
 
-   @Bean
-   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-       http.authorizeHttpRequests()
-               .requestMatchers("/admin/**").authenticated()
-               .anyRequest().permitAll()
-               .and().formLogin();
-       return http.build();
-   }
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests()
+                .requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
+                .anyRequest().permitAll();
+        http.formLogin()
+                .loginPage("/user/login");
+        http.logout()
+                .logoutUrl("/user/logout");
+        return http.build();
+    }
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
