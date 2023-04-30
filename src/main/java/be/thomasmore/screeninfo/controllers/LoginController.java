@@ -32,7 +32,7 @@ public class LoginController {
     private AuthenticationManager authenticationManager;
     private Logger logger = LoggerFactory.getLogger(LoginController.class);
 
-    @GetMapping({"/", "/home"})
+    @GetMapping( "/home")
     public String home(Model model, Principal principal) {
         final String loginName = principal==null ? "NOBODY" : principal.getName();
         logger.info("homepage - logged in as " + loginName);
