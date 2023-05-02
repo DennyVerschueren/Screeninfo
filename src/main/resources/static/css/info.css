@@ -75,10 +75,22 @@ img {
     letter-spacing: 0.08em;
 }
 
+.festival-date-koopzondag {
+    font-size: 1.1em;
+    color: #FFD31C;
+    font-weight: 700;
+
+}
+
 .festival-name {
     font-size: 2.3em;
     text-transform: lowercase;
     letter-spacing: 0.08em;
+}
+
+.festival-name-koopzondag {
+    font-size: 1.8em;
+    text-transform: lowercase;
 }
 
 h3 {
@@ -122,7 +134,7 @@ figure {
 .festival-moreinfo {
     position: absolute;
     right: 40px;
-    bottom: 30px;
+    bottom: 50px;
 }
 
 /*! parkpop background  */
