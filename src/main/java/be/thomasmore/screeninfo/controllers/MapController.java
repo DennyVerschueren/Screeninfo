@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,10 @@ public class MapController {
     @Autowired
     private SpotRepository spotRepository;
     @GetMapping("/map")
-    public String defaultMapView(Model model){
+    public String defaultMapView(Model model,
+                                 @RequestParam(required = false) boolean filterToillet,
+                                 @RequestParam(required = false) boolean filterFestival,
+                                 @RequestParam(required = false) boolean filterVoedKraam){
 
         List<Spot> spots = spotRepository.findAll();
         List<Spot> toilletes = new ArrayList<Spot>();
@@ -35,9 +39,19 @@ public class MapController {
             }
         }
 
-        model.addAttribute("toilletes",toilletes);
-        model.addAttribute("festivals",festivals);
-        model.addAttribute("voedselKraampjes",voedselKraampjes);
+        if(filterToillet){
+            model.addAttribute("toilletes",toilletes);
+        }
+        model.addAttribute("filterToillet",filterToillet);
+        if(filterFestival){
+            model.addAttribute("festivals",festivals);
+        }
+        model.addAttribute("filterFestival",filterFestival);
+        if(filterVoedKraam){
+            model.addAttribute("voedselKraampjes",voedselKraampjes);
+        }
+        model.addAttribute("filterVoedKraam",filterVoedKraam);
+
         return "map";
     }
 }
