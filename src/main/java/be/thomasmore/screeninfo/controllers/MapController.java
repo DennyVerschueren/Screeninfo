@@ -1,4 +1,4 @@
-package be.thomasmore.screeninfo.controller;
+package be.thomasmore.screeninfo.controllers;
 
 import be.thomasmore.screeninfo.model.Spot;
 import be.thomasmore.screeninfo.repositories.SpotRepository;
