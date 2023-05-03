@@ -26,24 +26,30 @@
 
 <div class="col-4 start-50 top-50 position-absolute translate-middle">
 
-    <div class="row">
-        <p class="col-2">search </p>
-        <input class="col-5 empty" type="text">
-    </div>
-    <div class="row">
-        <p class="col-1" style="color: #0022cc; max-width: 25px; background-color: #0022cc; border-radius: 50px" >°</p>
-        <p class="col-10" style="color: black"> Toilletes </p>
-    </div>
-    <div class="row">
-        <p class="col-1" style="color: #932222; max-width: 25px; background-color: #932222; border-radius: 50px" >°</p>
-        <p class="col-10" style="color: black"> Festivals </p>
-    </div>
-    <div class="row">
-        <p class="col-1" style="color: #218630; max-width: 25px; background-color: #218630; border-radius: 50px" >°</p>
-        <p class="col-10" style="color: black">VoedselKraampjes </p>
-    </div>
+    <form>
+        <div class="row">
+            <p class="col-2">search </p>
+            <input class="col-5 empty" type="text">
+        </div>
+        <div class="row">
+            <p class="col-1" style="color: #0022cc; max-width: 25px; background-color: #0022cc; border-radius: 50px" >°</p>
+            <p class="col-8" style="color: black"> Toilletes </p>
+            <input class="col-2" type="checkbox" name="Toillet" value="false">
+        </div>
+        <div class="row">
+            <p class="col-1" style="color: #932222; max-width: 25px; background-color: #932222; border-radius: 50px" >°</p>
+            <p class="col-8" style="color: black"> Festivals </p>
+            <input class="col-2" type="checkbox" name="Festival" value="false">
+        </div>
+        <div class="row">
+            <p class="col-1" style="color: #218630; max-width: 25px; background-color: #218630; border-radius: 50px" >°</p>
+            <p class="col-8" style="color: black">VoedselKraampjes </p>
+            <input class="col-2" type="checkbox" name="Toillet" value="false">
+        </div>
+        <input type="submit" value="filter">
+    </form>
 
-    <svg height="400" width="400">
+    <svg height="400" width="400" >
         <path d="M 15 100 L70 200 L70 205 L15 105 Z
   			M 15 100 L170 100 L172 102 L12 102 Z
             M 70 200 L225 200 L227 202 L72 202 Z
