@@ -1,0 +1,195 @@
+
+body {
+    color: #222;
+    font-family: "Axiforma",arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    position: relative;
+}
+
+div {
+    display: block;
+}
+
+
+.events{
+    display: block;
+}
+
+
+.festival {
+    background-color: #f28629;
+    color: #fff;
+}
+
+.festival {
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.festival:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: all 0.25s ease;
+    transition-duration: 0.25s;
+    opacity: 0.85;
+}
+
+figure {
+    margin: 0;
+}
+
+figure {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.festival .festival-content {
+    background-color: #f28629;
+}
+
+.festival-content {
+    background-color: #f28629;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transition: all 0.25s ease;
+}
+
+.festival-date {
+    padding-bottom: 1.25em;
+    color: #FFD31C;
+    font-size: 1.5em;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.festival-name {
+    font-size: 2.3em;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
+}
+
+h3 {
+    display: block;
+}
+
+.festival:nth-child(4n+1) .festival-cover, .festival:nth-child(4n+2) .festival-cover, .festival:nth-child(4n+3) .festival-cover,.festival:nth-child(4n+4) .festival-cover {
+    float: right;
+}
+
+
+figure {
+    margin: 0;
+}
+
+
+.festival-contentInner {
+    top: 50%;
+    display: block;
+    padding: 20px 30px 20px 20px;
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+
+.festival-cover, .festival-content {
+    width: 50%;
+}
+
+.festival-link {
+    color: #fff;
+}
+
+.more {
+    color: #fff;
+    font-size: 0.9em;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+
+.festival-moreinfo {
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+}
+
+/*! parkpop background  */
+
+.festival-parkpop .festival-content {
+    background-color: #6FB746;
+    /*background-image: url(/sites/all/themes/dzivm/assets/images/tiles/parkpop.svg),none;*/
+    /*background-position: left top;*/
+    /*background-size: auto 100%;*/
+    /*background-repeat: no-repeat;*/
+}
+
+.festival-cover-parkpop {
+    background-color: #6FB746;
+}
+
+
+
+
+
+/*? maanrock background */
+
+.festival-maanrock .festival-content {
+    background-color: #253679;
+    /* background-image: url(/sites/all/themes/dzivm/assets/images/tiles/maanrock.svg),none; */
+    /* background-position: left top; */
+    /* background-size: auto 63%; */
+    /* background-repeat: no-repeat; */
+}
+
+.festival-cover-maanrock {
+    background-color: #253679;
+    /*float: right;*/
+}
+
+
+/*! koopzondagen */
+
+.festival-koopzondag .festival-content {
+    background-color: rgb(197, 163, 197);
+}
+
+.festival-cover-koopzondag{
+    background-color: rgb(197, 163, 197);
+}
+
+
+@media only screen and (max-width: 690px){
+
+    .events{
+        display: grid;
+    }
+
+    .festival {
+        float: none;
+        width: auto;
+    }
+
+}
+
+
+@media only screen and (min-width: 691px){
+
+    .festival-koopzondag{
+        display: none;
+    }
+
+}
+
+
