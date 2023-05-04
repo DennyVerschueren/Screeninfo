@@ -32,20 +32,23 @@
             <input class="col-5 empty" type="text">
         </div>
 
-        <svg height="400" width="400" >
+        <svg height="500" width="500">
             <path d="M 15 100 L70 200 L70 205 L15 105 Z
                 M 15 100 L170 100 L172 102 L12 102 Z
                 M 70 200 L225 200 L227 202 L72 202 Z
                 M 225 200 L170 100 L174 104 L229 204 Z
                 M 170 100 L70 200 L73 203 L173 103 Z" />
             <a th:each="toillete:${toilletes}" th:href="${toillete.extraLink}">
-                <circle id="pointA" th:cx="${toillete.mapCordinatX}" th:cy="${toillete.mapCordinatY}" r="5" fill="#0022cc" />
+                <circle id="pointA" th:cx="${toillete.mapCordinatX}" th:cy="${toillete.mapCordinatY}" r="10" fill="#0022cc" />
+                <text fill="#ffffff" class="spotLetter" font-size="12" font-family="Verdana" th:x="${toillete.mapCordinatX} - 5" th:y="${toillete.mapCordinatY} + 6">T</text>
             </a>
             <a th:each="festival:${festivals}" th:href="${festival.extraLink}">
-                <circle id="pointA" th:cx="${festival.mapCordinatX}" th:cy="${festival.mapCordinatY}" r="5" fill="#932222" />
+                <circle id="pointA" th:cx="${festival.mapCordinatX}" th:cy="${festival.mapCordinatY}" r="10" fill="#932222" />
+                <text fill="#ffffff" font-size="12" font-family="Verdana" th:x="${festival.mapCordinatX} - 5" th:y="${festival.mapCordinatY} + 6">F</text>
             </a>
             <a th:each="voedselKraampje:${voedselKraampjes}" th:href="${voedselKraampje.extraLink}">
-                <circle id="pointA" th:cx="${voedselKraampje.mapCordinatX}" th:cy="${voedselKraampje.mapCordinatY}" r="5" fill="#218630" />
+                <circle id="pointA" th:cx="${voedselKraampje.mapCordinatX}" th:cy="${voedselKraampje.mapCordinatY}" r="10" fill="#218630" />
+                <text fill="#ffffff" font-size="12" font-family="Verdana" th:x="${voedselKraampje.mapCordinatX} - 5" th:y="${voedselKraampje.mapCordinatY} + 6">V</text>
             </a>
 
         </svg>
