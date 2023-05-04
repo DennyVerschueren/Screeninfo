@@ -16,11 +16,18 @@ public class MapController {
 
     @Autowired
     private SpotRepository spotRepository;
+
     @GetMapping("/map")
     public String defaultMapView(Model model,
                                  @RequestParam(required = false) boolean filterToillet,
                                  @RequestParam(required = false) boolean filterFestival,
                                  @RequestParam(required = false) boolean filterVoedKraam){
+
+        if(!filterToillet && !filterFestival && !filterVoedKraam){
+            filterToillet = true;
+            filterFestival = true;
+            filterVoedKraam = true;
+        }
 
         List<Spot> spots = spotRepository.findAll();
         List<Spot> toilletes = new ArrayList<Spot>();
@@ -54,4 +61,5 @@ public class MapController {
 
         return "map";
     }
+
 }
