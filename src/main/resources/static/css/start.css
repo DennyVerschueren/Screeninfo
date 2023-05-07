@@ -1,0 +1,25 @@
+body {
+    background: #253679;
+    font-family: "Axiforma",arial,sans-serif;
+
+}
+
+h2 {
+    color: white;
+}
+
+.start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome {
+    padding: 50px;
+    text-align: center;
+}
+
+.welcome h2 {
+    font-size: xx-large;
+}
+
