@@ -6,6 +6,7 @@ import be.thomasmore.screeninfo.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -26,11 +27,12 @@ import java.util.Optional;
 public class LoginController {
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private PasswordEncoder encoder;
     @Autowired
     private AuthenticationManager authenticationManager;
+    @Autowired
+    private EmailService emailService;
     private Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @GetMapping( "/home")
@@ -70,7 +72,6 @@ public class LoginController {
         EndUser user = new EndUser(userName, encodedPassword, "ROLE_USER");
         userRepository.save(user);
         autologin(userName, password.trim());
-        EmailService emailService = new EmailService();
         emailService.sendEmail("versdenny@gmail.com","test","dit is een test");
         return "redirect:/home";
     }
