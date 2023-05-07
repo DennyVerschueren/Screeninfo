@@ -1,5 +1,6 @@
 package be.thomasmore.screeninfo.controllers;
 
+import be.thomasmore.screeninfo.model.EmailService;
 import be.thomasmore.screeninfo.model.EndUser;
 import be.thomasmore.screeninfo.repositories.UserRepository;
 import org.slf4j.Logger;
@@ -69,6 +70,8 @@ public class LoginController {
         EndUser user = new EndUser(userName, encodedPassword, "ROLE_USER");
         userRepository.save(user);
         autologin(userName, password.trim());
+        EmailService emailService = new EmailService();
+        emailService.sendEmail("versdenny@gmail.com","test","dit is een test");
         return "redirect:/home";
     }
 
