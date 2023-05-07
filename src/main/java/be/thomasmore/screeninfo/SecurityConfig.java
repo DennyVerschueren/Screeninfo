@@ -24,13 +24,9 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests()
-                .requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
-                .anyRequest().permitAll();
-        http.formLogin()
-                .loginPage("/user/login");
-        http.logout()
-                .logoutUrl("/user/logout");
+        http.authorizeHttpRequests().requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN").anyRequest().permitAll();
+        http.formLogin().loginPage("/user/login");
+        http.logout().logoutUrl("/user/logout");
         http.securityContext((securityContext) -> securityContext.requireExplicitSave(false));
         return http.build();
     }
@@ -42,12 +38,7 @@ public class SecurityConfig {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication()
-                .dataSource(dataSource)
-                .usersByUsernameQuery(
-                        "select username,password,true from end_user where username = ?")
-                .authoritiesByUsernameQuery(
-                        "select username, role from end_user where username = ?");
+        auth.jdbcAuthentication().dataSource(dataSource).usersByUsernameQuery("select username,password,true from end_user where username = ?").authoritiesByUsernameQuery("select username, role from end_user where username = ?");
     }
 
     @Bean
@@ -56,8 +47,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
-            throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
 }

@@ -7,16 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @GetMapping("/eventlijst")
+    @GetMapping({"/", "/eventlijst"})
     public String events(Model model) {
         return "eventlijst";
     }
 
-    @GetMapping({"/","/start"})
-    public String getInternational() {
-        return "start";
-    }
-
-
 }
-

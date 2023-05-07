@@ -1,7 +1,9 @@
 package be.thomasmore.screeninfo.controllers;
 
+import be.thomasmore.screeninfo.model.EmailService;
 import be.thomasmore.screeninfo.model.EndUser;
 import be.thomasmore.screeninfo.repositories.UserRepository;
+import jakarta.mail.MessagingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,22 +21,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.security.Principal;
-import java.util.Optional;
 
 @Controller
 public class LoginController {
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private PasswordEncoder encoder;
     @Autowired
     private AuthenticationManager authenticationManager;
+    @Autowired
+    private EmailService emailService;
     private Logger logger = LoggerFactory.getLogger(LoginController.class);
 
-    @GetMapping( "/home")
+    @GetMapping("/home")
     public String home(Model model, Principal principal) {
-        final String loginName = principal==null ? "NOBODY" : principal.getName();
+        final String loginName = principal == null ? "NOBODY" : principal.getName();
         logger.info("homepage - logged in as " + loginName);
         return "home";
     }
@@ -58,25 +60,25 @@ public class LoginController {
     }
 
     @PostMapping({"/signup", "/user/signup"})
-    public String registerPost(Principal principal,
-                               @RequestParam String userName,
-                               @RequestParam String password) {
+    public String registerPost(Principal principal, @RequestParam String emailAddress, @RequestParam String userName, @RequestParam String password, @RequestParam(required = false, defaultValue = "false") boolean getUpdates) throws MessagingException {
         if (principal != null) return "redirect:/home";
-        if (userName==null || userName.trim().equals("")) return "redirect:/home";
-        if (password==null || password.trim().equals("")) return "redirect:/home";
+        if (emailAddress == null || emailAddress.trim().equals("")) return "redirect:/home";
+        if (userName == null || userName.trim().equals("")) return "redirect:/home";
+        if (password == null || password.trim().equals("")) return "redirect:/home";
         userName = userName.trim();
         String encodedPassword = encoder.encode(password.trim());
-        EndUser user = new EndUser(userName, encodedPassword, "ROLE_USER");
+        EndUser user = new EndUser(emailAddress, userName, encodedPassword, "ROLE_USER", true);
         userRepository.save(user);
         autologin(userName, password.trim());
+        if (getUpdates)
+            emailService.sendEmailWithAttachment(emailAddress, "Welkom", "Welkom bij de Mechelen Feest app");
         return "redirect:/home";
     }
 
     private void autologin(String userName, String password) {
         SecurityContext sc = SecurityContextHolder.getContext();
         try {
-            UsernamePasswordAuthenticationToken token
-                    = new UsernamePasswordAuthenticationToken(userName, password);
+            UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userName, password);
             Authentication auth = authenticationManager.authenticate(token);
             logger.info("authentication: " + auth.isAuthenticated());
             logger.info("Logging in with [{}]", auth.getPrincipal());
@@ -87,7 +89,7 @@ public class LoginController {
         }
     }
 
-    @GetMapping( "/login-error")
+    @GetMapping("/login-error")
     public String loginError(Model model) {
         return "loginError";
     }
