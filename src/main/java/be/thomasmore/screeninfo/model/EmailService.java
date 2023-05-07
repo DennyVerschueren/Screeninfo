@@ -35,8 +35,7 @@ public class EmailService {
         helper.setSubject(subject);
         helper.setText(text);
 
-        FileSystemResource file
-                = new FileSystemResource(new File("src/main/resources/static/files/Klaar.pdf"));
+        FileSystemResource file = new FileSystemResource(new File("src/main/resources/static/files/Klaar.pdf"));
         helper.addAttachment("MechelenFeest.pdf", file);
 
         mailSender.send(message);

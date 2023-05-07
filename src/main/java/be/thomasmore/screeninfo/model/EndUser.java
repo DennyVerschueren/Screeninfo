@@ -14,7 +14,7 @@ public class EndUser {
     private String role;
     private boolean getUpdates;
 
-    public EndUser(String emailAddress,String username, String password, String role, boolean getUpdates) {
+    public EndUser(String emailAddress, String username, String password, String role, boolean getUpdates) {
         this.id = id;
         this.emailAddress = emailAddress;
         this.username = username;
@@ -43,7 +43,7 @@ public class EndUser {
         this.getUpdates = getUpdates;
     }
 
-    public String  getRole() {
+    public String getRole() {
         return role;
     }
 
@@ -71,8 +71,7 @@ public class EndUser {
         this.id = id;
     }
 
-    public Integer
-    getId() {
+    public Integer getId() {
         return id;
     }
 
