@@ -3,10 +3,10 @@ package be.thomasmore.screeninfo.controllers;
 import be.thomasmore.screeninfo.model.EmailService;
 import be.thomasmore.screeninfo.model.EndUser;
 import be.thomasmore.screeninfo.repositories.UserRepository;
+import jakarta.mail.MessagingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.security.Principal;
-import java.util.Optional;
 
 @Controller
 public class LoginController {
@@ -65,7 +64,7 @@ public class LoginController {
                                @RequestParam String emailAddress,
                                @RequestParam String userName,
                                @RequestParam String password,
-                               @RequestParam(required = false, defaultValue = "false") boolean getUpdates) {
+                               @RequestParam(required = false, defaultValue = "false") boolean getUpdates) throws MessagingException {
         if (principal != null) return "redirect:/home";
         if (emailAddress==null || emailAddress.trim().equals("")) return "redirect:/home";
         if (userName==null || userName.trim().equals("")) return "redirect:/home";
@@ -75,7 +74,7 @@ public class LoginController {
         EndUser user = new EndUser(emailAddress,userName, encodedPassword, "ROLE_USER",true);
         userRepository.save(user);
         autologin(userName, password.trim());
-        if (getUpdates) emailService.sendEmail(emailAddress,"test","dit is een test");
+        if (getUpdates) emailService.sendEmailWithAttachment(emailAddress,"Welkom","Welkom bij de Mechelen Feest app");
         return "redirect:/home";
     }
 
