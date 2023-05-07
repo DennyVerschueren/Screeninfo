@@ -8,16 +8,60 @@
             integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
             crossorigin="anonymous"
     />
+    <link rel="stylesheet" th:href="@{/static/style.css}" href="/static/style.css"/>
 </head>
 <body>
-<h1>Login page</h1>
-<p th:if="${loginError}" class="error">Wrong user or password</p>
-<form th:action="@{/user/login}" method="post">
-    <label for="username">Username</label>:
-    <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
-    <label for="password">Password</label>:
-    <input type="password" id="password" name="password" /> <br />
-    <input type="submit" value="Log in" />
-</form>
+<!--
+<div class="container login-container">
+    <div class="row">
+<div class="login-form-2">
+    <h3>Login for Form 2</h3>
+    <p th:if="${loginError}" class="error">Wrong user or password</p>
+    <form>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btnSubmit" value="Login" />
+        </div>
+    </form>
+</div> -->
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3 mx-auto">
+                    <div class="panel border bg-white">
+                        <div class="panel-heading">
+                            <h3 class="pt-3 fw-bold">Login</h3>
+                        </div>
+                        <div class="panel-body p-3">
+                            <form action="login_script.php" method="POST">
+                                <div class="form-group py-2">
+                                    <div class="input-field">
+                                        <span class="far fa-user p-2"></span>
+                                        <input type="text" placeholder="Username or Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group py-1 pb-2">
+                                    <div class="input-field">
+                                        <span class="fas fa-lock px-2"></span>
+                                        <input type="password" placeholder="Enter your Password" required>
+                                        <button class="btn bg-white text-muted">
+                                            <span class="far fa-eye-slash"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="btn btn-primary btn-block mt-3">Login</div>
+                                <div class="text-center pt-4 text-muted">Don't have an account? <a href="#">Sign up</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 </body>
 </html>
