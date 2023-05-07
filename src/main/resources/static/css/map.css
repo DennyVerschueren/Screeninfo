@@ -1,24 +1,25 @@
 
-
-html{
-    background-color: #53C0D7;
-}
-body{
+html {
     background-color: #53C0D7;
 }
 
-svg{
-    background-color: #f0f0f0;
-    border-radius: 20px;
+body {
+    background-color: #53C0D7;
 }
-.empty{
+
+svg {
     background-color: #f0f0f0;
     border-radius: 20px;
 }
 
+.empty {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+}
 
-.spotLetter{
-    text-decoration-line:none;
+
+.spotLetter {
+    text-decoration-line: none;
 }
 
 
@@ -27,12 +28,9 @@ svg{
 }
 
 
+@media screen and (max-width: 550px) {
 
-
-
-@media screen and (max-width: 550px){
-
-    svg{
+    svg {
         max-width: 90vw;
     }
 
@@ -41,13 +39,14 @@ svg{
     }
 
 }
-@media screen and (min-width: 550px){
 
-    svg{
+@media screen and (min-width: 550px) {
+
+    svg {
         max-width: 90%;
     }
 
-    .mainArea{
+    .mainArea {
         width: 500px;
         margin: auto;
     }

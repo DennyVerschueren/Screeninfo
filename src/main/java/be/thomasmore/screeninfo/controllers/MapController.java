@@ -21,43 +21,45 @@ public class MapController {
     public String defaultMapView(Model model,
                                  @RequestParam(required = false) boolean filterToillet,
                                  @RequestParam(required = false) boolean filterFestival,
-                                 @RequestParam(required = false) boolean filterVoedKraam){
+                                 @RequestParam(required = false) boolean filterVoedKraam) {
 
-        if(!filterToillet && !filterFestival && !filterVoedKraam){
+        // chekken dat je wel aan het fiteren zijt of dat je pas opstart
+        if (!filterToillet && !filterFestival && !filterVoedKraam) {
             filterToillet = true;
             filterFestival = true;
             filterVoedKraam = true;
         }
 
-        List<Spot> spots = spotRepository.findAll();
+        List<Spot> spots = spotRepository.findAll(); // ik haal alle spots in om, daar na de spots te verdelen
+
         List<Spot> toilletes = new ArrayList<Spot>();
         List<Spot> festivals = new ArrayList<Spot>();
         List<Spot> voedselKraampjes = new ArrayList<Spot>();
-        for (Spot spot: spots) {
+
+        for (Spot spot : spots) {
             System.out.println(spot.getSpotType());
-            if(spot.getSpotType().equals("TOILET")){
+            if (spot.getSpotType().equals("TOILET")) {
                 toilletes.add(spot);
-            }
-            else if(spot.getSpotType().equals("FESTIVAL")){
+            } else if (spot.getSpotType().equals("FESTIVAL")) {
                 festivals.add(spot);
-            }
-            else if(spot.getSpotType().equals("VOEDSELKRAAM")){
-               voedselKraampjes.add(spot);
+            } else if (spot.getSpotType().equals("VOEDSELKRAAM")) {
+                voedselKraampjes.add(spot);
             }
         }
 
-        if(filterToillet){
-            model.addAttribute("toilletes",toilletes);
+        //gaan chekken dat je filters gebruikt
+        if (filterToillet) {
+            model.addAttribute("toilletes", toilletes);
         }
-        model.addAttribute("filterToillet",filterToillet);
-        if(filterFestival){
-            model.addAttribute("festivals",festivals);
+        model.addAttribute("filterToillet", filterToillet);
+        if (filterFestival) {
+            model.addAttribute("festivals", festivals);
         }
-        model.addAttribute("filterFestival",filterFestival);
-        if(filterVoedKraam){
-            model.addAttribute("voedselKraampjes",voedselKraampjes);
+        model.addAttribute("filterFestival", filterFestival);
+        if (filterVoedKraam) {
+            model.addAttribute("voedselKraampjes", voedselKraampjes);
         }
-        model.addAttribute("filterVoedKraam",filterVoedKraam);
+        model.addAttribute("filterVoedKraam", filterVoedKraam);
 
         return "map";
     }
