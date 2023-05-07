@@ -62,17 +62,20 @@ public class LoginController {
 
     @PostMapping({"/signup", "/user/signup"})
     public String registerPost(Principal principal,
+                               @RequestParam String emailAddress,
                                @RequestParam String userName,
-                               @RequestParam String password) {
+                               @RequestParam String password,
+                               @RequestParam(required = false, defaultValue = "false") boolean getUpdates) {
         if (principal != null) return "redirect:/home";
+        if (emailAddress==null || emailAddress.trim().equals("")) return "redirect:/home";
         if (userName==null || userName.trim().equals("")) return "redirect:/home";
         if (password==null || password.trim().equals("")) return "redirect:/home";
         userName = userName.trim();
         String encodedPassword = encoder.encode(password.trim());
-        EndUser user = new EndUser(userName, encodedPassword, "ROLE_USER");
+        EndUser user = new EndUser(emailAddress,userName, encodedPassword, "ROLE_USER",true);
         userRepository.save(user);
         autologin(userName, password.trim());
-        emailService.sendEmail("versdenny@gmail.com","test","dit is een test");
+        if (getUpdates) emailService.sendEmail(emailAddress,"test","dit is een test");
         return "redirect:/home";
     }
 

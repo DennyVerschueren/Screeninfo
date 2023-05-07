@@ -10,12 +10,20 @@
     <div>
         <form th:action="@{/user/signup}" method="post">
             <div class="oneinput">
+                <label for="emailaddress" class="info">Email address: </label>
+                <input type="text" id="emailaddress" name="emailAddress" class="editfield">
+            </div>
+            <div class="oneinput">
                 <label for="username" class="info">Username: </label>
                 <input type="text" id="username" name="userName" class="editfield">
             </div>
             <div class="oneinput">
                 <label for="password" class="info">Password: </label>
                 <input type="password" id="password" name="password" class="editfield">
+            </div>
+            <div class="oneinput">
+                <label for="getupdates" class="info">Receive updates via email.</label>
+                <input type="radio" id="getupdates" name="getUpdates" class="editfield">
             </div>
             <div class="oneinput saveButtonDiv">
                 <input type="submit" value="signup" class="smallButton buttonLook">
