@@ -18,11 +18,6 @@ div {
 
 
 .festival {
-    background-color: #f28629;
-    color: #fff;
-}
-
-.festival {
     position: relative;
     float: left;
     width: 50%;
@@ -55,12 +50,9 @@ img {
     width: auto;
 }
 
-.festival .festival-content {
-    background-color: #f28629;
-}
 
 .festival-content {
-    background-color: #f28629;
+    /*background-color: #f28629;*/
     position: absolute;
     top: 0;
     bottom: 0;
@@ -137,49 +129,6 @@ figure {
     bottom: 50px;
 }
 
-/*! parkpop background  */
-
-.festival-parkpop .festival-content {
-    background-color: #6FB746;
-    /*background-image: url(/sites/all/themes/dzivm/assets/images/tiles/parkpop.svg),none;*/
-    /*background-position: left top;*/
-    /*background-size: auto 100%;*/
-    /*background-repeat: no-repeat;*/
-}
-
-.festival-cover-parkpop {
-    background-color: #6FB746;
-}
-
-
-
-
-
-/*? maanrock background */
-
-.festival-maanrock .festival-content {
-    background-color: #253679;
-    /* background-image: url(/sites/all/themes/dzivm/assets/images/tiles/maanrock.svg),none; */
-    /* background-position: left top; */
-    /* background-size: auto 63%; */
-    /* background-repeat: no-repeat; */
-}
-
-.festival-cover-maanrock {
-    background-color: #253679;
-    /*float: right;*/
-}
-
-
-/*! koopzondagen */
-
-.festival-koopzondag .festival-content {
-    background-color: rgb(197, 163, 197);
-}
-
-.festival-cover-koopzondag{
-    background-color: rgb(197, 163, 197);
-}
 
 
 @media only screen and (max-width: 690px){
@@ -203,5 +152,4 @@ figure {
     }
 
 }
-
 
