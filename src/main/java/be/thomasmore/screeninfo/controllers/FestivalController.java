@@ -13,7 +13,7 @@ public class FestivalController {
     @Autowired
     FestivalRepository festivalRepository;
 
-    @GetMapping
+    @GetMapping("/festivallist")
     public String festivalList(Model model) {
 
         Iterable<Festival> festivals = festivalRepository.findAll();
