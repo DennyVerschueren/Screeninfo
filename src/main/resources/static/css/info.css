@@ -67,11 +67,17 @@ img {
     letter-spacing: 0.08em;
 }
 
-.festival-date-koopzondag {
+/*.festival-date-koopzondag {*/
+/*    font-size: 1.1em;*/
+/*    color: #FFD31C;*/
+/*    font-weight: 700;*/
+/*}*/
+
+.festival:nth-child(4n+4) .festival-date {
     font-size: 1.1em;
     color: #FFD31C;
     font-weight: 700;
-
+    letter-spacing: 0;
 }
 
 .festival-name {
@@ -80,9 +86,15 @@ img {
     letter-spacing: 0.08em;
 }
 
-.festival-name-koopzondag {
+/*.festival-name-koopzondag {*/
+/*    font-size: 1.8em;*/
+/*    text-transform: lowercase;*/
+/*}*/
+
+.festival:nth-child(4n+4) .festival-name {
     font-size: 1.8em;
     text-transform: lowercase;
+    letter-spacing: 0;
 }
 
 h3 {
@@ -147,7 +159,11 @@ figure {
 
 @media only screen and (min-width: 691px){
 
-    .festival-koopzondag{
+    /*.festival-koopzondag{*/
+    /*    display: none;*/
+    /*}*/
+
+    .festival:nth-child(4n+4) {
         display: none;
     }
 
