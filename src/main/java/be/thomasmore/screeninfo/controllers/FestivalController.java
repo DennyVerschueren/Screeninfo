@@ -13,14 +13,14 @@ public class FestivalController {
     @Autowired
     FestivalRepository festivalRepository;
 
-    @GetMapping("/festivallist")
+    @GetMapping("/festivallijst")
     public String festivalList(Model model) {
 
         Iterable<Festival> festivals = festivalRepository.findAll();
 
         model.addAttribute("festivals",festivals);
 
-        return "festivallist";
+        return "festivallijst";
     }
 
 }
