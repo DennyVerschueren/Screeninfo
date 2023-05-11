@@ -19,7 +19,7 @@ public class EmailConfig {
         mailSender.setPort(587);
 
         mailSender.setUsername("mechelenfeestapp@gmail.com");
-        mailSender.setPassword("xkoigomaujnknodh");
+        mailSender.setPassword("zcjcbadzssixgvkt");
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
