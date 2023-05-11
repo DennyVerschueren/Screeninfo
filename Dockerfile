@@ -1,6 +1,6 @@
 FROM maven:3.8.7-openjdk-18-slim as build
 
-COPY src /app
+COPY . /app
 WORKDIR /app
 RUN mvn clean install -DskipTests
 
