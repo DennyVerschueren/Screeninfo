@@ -16,20 +16,12 @@
 
 </head>
 <body>
+
 <header th:fragment="header">
 
     <nav class="navbar navbar-expand-lg navbar-dark text-center px-4 bg-primary">
         <div class="container-fluid">
             <img class="navbar-brand " src="/img/logo.svg" id="logo_custom" width="8%" height="auto"  alt="logo">
-
-            <form class="form-inline mx-auto" target="_self">
-                <div class="form-group ">
-                    <label for="search-field">
-                        <i class="fa fa-search " style="color: #ffc107;" ></i>
-                    </label>
-                    <input class="form-control search-field" style="color: #ffc107;" type="search" name="search" id="search-field">
-                </div>
-            </form>
             <button class="navbar-light navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,73 +32,44 @@
                 }
             </style>
             <div class="collapse navbar-collapse fs-3" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item ">
-                        <a class="nav-link active mx-3 " aria-current="page" href="#section1"><span class="text-warning "><strong>Home</strong></span></a>
+                        <a class="nav-link active mx-3 " aria-current="page" href="/map"><span class="text-warning "><strong>MapView</strong></span></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active mx-3" aria-current="page" href="#section1"><span class="text-warning">Nieuws</span></a>
+                        <a class="nav-link active mx-3" aria-current="page" href="/festivallijst"><span class="text-warning">EventLijst</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-warning mx-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Infos
                         </a>
-
-                        <ul class="dropdown-menu bg-primary text-warning shadow-lg">
-                            <li><a class="dropdown-item text-center fw-bold" href="#">Event1</a></li>
-                            <li><a class="dropdown-item text-center fw-bold" href="#">Event2</a></li>
-                            <li><a class="dropdown-item text-center fw-bold" href="#">Event3</a></li>
+                        <style>
+                            .dropdown-item{
+                                transition: all .6s;
+                            }
+                        </style>
+                        <ul class="dropdown-menu bg-warning">
+                            <li><a class="dropdown-item text-center" href="#">Event1</a></li>
+                            <li><a class="dropdown-item text-center" href="#">Event2</a></li>
+                            <li><a class="dropdown-item text-center" href="#">Event3</a></li>
                         </ul>
 
-                    <li class="nav-item ml-auto">
+                    <li class="nav-item">
                         <a class="nav-link text-warning mx-3" href="#section4">Contact</a>
                     </li>
 
-                    <div class="nav-item dropdown mx-auto mx-3">
-                        <button class="nav-link dropdown-toggle text-warning mx-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Taal
-                        </button>
-                        <div class="dropdown-menu bg-primary shadow-lg">
-                            <a class="dropdown-item text-center fw-bold" href="#">
-                                <img src="/img/NL.png" width="15%" class="mr-2">
-                                Nederlands</a>
-                            <a class="dropdown-item text-center fw-bold" href="#">
-                                <img src="/img/US.png" width="15%"class="mr-2">
-                                Engels</a>
-                        </div>
-                    </div>
 
-                    <div class="navbar-nav mx-auto mb-2 mb-lg-0 right-cta-menu text-right d-flex  col-6">
-                        <div class="mx-auto fs-3 mx-3 ">
-
-                            <a href="/templates/user/login.html" target="_blank" class="btn btn-warning border-width-3  d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log In</a>
-                        </div>
-                        <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
-                    </div>
-                    <!--
-                        <li class="form-group has-search">
-                            <span class="fa fa-search form-control-feedback"></span>
-                            <input type="text" class="form-control" placeholder="Search">
+                    <li class="form-group has-search">
+<!--                        <span class="fa fa-search form-control-feedback"></span>-->
+                        <input type="text" class="form-control" placeholder="Search">
                     </li>
-                    <li class="drop-down ms-auto">
-                        <div class="wrapper">
-                            <img src="/img/US.png" width="50px" class="selectedImg">
-                            <div class="selected">English</div>
-                        </div>
-                            <i class="ri-arrow-drop-down-fill arrow"></i>
 
-
-
-                    </li>-->
                 </ul>
 
             </div>
         </div>
     </nav>
-
-
 </header>
-
 
 <footer th:fragment="footer" class="container-fluid bg-primary text-center text-white py-3 mt-5" id="footer">
 
