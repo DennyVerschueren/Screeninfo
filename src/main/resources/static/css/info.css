@@ -13,7 +13,7 @@ div {
 
 
 .events{
-    display: block;
+    display: inline-block;
 }
 
 
@@ -147,12 +147,14 @@ figure {
 
 }
 
-
-@media only screen and (min-width: 691px){
-
-    .festival:nth-child(4n+4) {
-        display: none;
-    }
-
+.freespaceforfooter {
+    margin: 150px 0 300px 0;
 }
+/*@media only screen and (min-width: 691px){*/
+
+/*    .festival:nth-child(4n+4) {*/
+/*        display: none;*/
+/*    }*/
+
+/*}*/
 

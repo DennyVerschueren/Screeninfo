@@ -1,11 +1,11 @@
 
-body {
-    background-color: white;
-    font-family: "Axiforma",arial,sans-serif;
-    font-size: 16px;
-    line-height: 1.5em;
-    position: relative;
-}
+/*body {*/
+/*    background-color: white;*/
+/*    font-family: "Axiforma",arial,sans-serif;*/
+/*    font-size: 16px;*/
+/*    line-height: 1.5em;*/
+/*    position: relative;*/
+/*}*/
 
 .navbar {
     border: 1px solid #ddd;
@@ -60,4 +60,35 @@ nav .nav-link:hover {
     text-align: center;
     pointer-events: none;
     color: #aaa;
+}
+
+.arrow {
+    font-size: 30px;
+}
+
+.wrapper{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.fa fa-search{
+    width: 3rem;
+}
+.search-field {
+    display:inline-block;
+    width:80%;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid transparent;
+    border-radius:0;
+    color:#ffc107;
+    box-shadow:none;
+    color:#ffc107;
+    transition:border-bottom-color 0.3s;
+}
+
+.search-field:focus {
+    border-bottom:1px solid #ffc107;
+    transition: all 0.5s;
+    background: transparent;
 }
