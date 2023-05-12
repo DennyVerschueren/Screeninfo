@@ -17,15 +17,23 @@ svg {
     background-color: #78c758;
 }
 
+.map-filter{
+    margin: 0;
+}
+
+.map-checkBox input:checked ~ ~ .map-checkBox-toillet{
+    background-color: #932222;
+}
 
 @media screen and (max-width: 550px) {
 
     svg {
-        max-width: 90vw;
+        max-width: 100%;
     }
 
     .mainArea {
-        margin-left: 5vw;
+        max-width: 90vw;
+        margin-left: 5%;
     }
 
 }
@@ -33,7 +41,7 @@ svg {
 @media screen and (min-width: 550px) {
 
     svg {
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .mainArea {

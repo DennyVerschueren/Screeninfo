@@ -12,14 +12,9 @@
 <body class="map-background">
 
 <div th:replace="~{headerfooter :: header}">Hier komt de header</div>
-<div class="mainArea map-background">
+<main class="mainArea map-background">
 
     <form>
-        <div class="row">
-            <p class="col-2">search </p>
-            <input class="col-5 empty" type="text">
-        </div>
-
         <svg
                 width="500"
                 height="500"
@@ -388,29 +383,29 @@
 
         </svg>
 
-        <div class="row">
+        <div class="row map-filter">
             <p class="col-1" style="color: #0022cc; max-width: 25px; background-color: #0022cc; border-radius: 50px">
                 °</p>
-            <p class="col-8" style="color: black"> Toilletes </p>
-            <input class="col-2" type="checkbox" name="filterToillet" value="true" th:checked="${filterToillet}==true">
+            <p class="col-10" style="color: black"> Toilletes </p>
+            <input class="col-1" type="checkbox" name="filterToillet" value="true" th:checked="${filterToillet}==true">
         </div>
-        <div class="row">
-            <p class="col-1" style="color: #932222; max-width: 25px; background-color: #932222; border-radius: 50px">
-                °</p>
-            <p class="col-8" style="color: black"> Festivals </p>
-            <input class="col-2" type="checkbox" name="filterFestival" value="true"
-                   th:checked="${filterFestival}==true">
+        <div class="row map-filter">
+            <label class="navtext map-checkBox"> festivals
+                <input type="checkbox" name="filterFestival" value="true" th:checked="${filterFestival}==true">
+                <span class="map-checkBox-toillet"></span>
+            </label>
+
         </div>
-        <div class="row">
+        <div class="row map-filter">
             <p class="col-1" style="color: #218630; max-width: 25px; background-color: #218630; border-radius: 50px">
                 °</p>
-            <p class="col-8" style="color: black">VoedselKraampjes </p>
-            <input class="col-2" type="checkbox" name="filterVoedKraam" value="true"
+            <p class="col-10" style="color: black">VoedselKraampjes </p>
+            <input class="col-1" type="checkbox" name="filterVoedKraam" value="true"
                    th:checked="${filterVoedKraam}==true">
         </div>
         <input type="submit" value="filter" th:href="@{/map/filter}">
     </form>
-</div>
+</main>
 
 
 <div th:replace="~{headerfooter :: footer}">Hier komt de footer</div>
