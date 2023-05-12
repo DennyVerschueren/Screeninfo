@@ -11,6 +11,21 @@ div {
     display: block;
 }
 
+h3 {
+    display: block;
+}
+
+figure {
+    margin: 0;
+    display: block;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
 
 .events{
     display: block;
@@ -31,25 +46,6 @@ div {
     opacity: 0.85;
 }
 
-figure {
-    margin: 0;
-}
-
-figure {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 40px;
-    margin-inline-end: 40px;
-}
-
-img {
-    border: 0;
-    max-width: 100%;
-    height: auto;
-    width: auto;
-}
-
 
 .festival-content {
     /*background-color: #f28629;*/
@@ -67,40 +63,15 @@ img {
     letter-spacing: 0.08em;
 }
 
-
-.festival:nth-child(4n+4) .festival-date {
-    font-size: 1.1em;
-    color: #FFD31C;
-    font-weight: 700;
-    letter-spacing: 0;
-}
-
 .festival-name {
     font-size: 2.3em;
     text-transform: lowercase;
     letter-spacing: 0.08em;
 }
 
-
-.festival:nth-child(4n+4) .festival-name {
-    font-size: 1.8em;
-    text-transform: lowercase;
-    letter-spacing: 0;
-}
-
-h3 {
-    display: block;
-}
-
-.festival:nth-child(4n+1) .festival-cover, .festival:nth-child(4n+2) .festival-cover, .festival:nth-child(4n+3) .festival-cover,.festival:nth-child(4n+4) .festival-cover {
+.festival-cover{
     float: right;
 }
-
-
-figure {
-    margin: 0;
-}
-
 
 .festival-contentInner {
     top: 50%;
