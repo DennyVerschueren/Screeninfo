@@ -1,12 +1,4 @@
 
-html {
-    background-color: #53C0D7;
-}
-
-body {
-    background-color: #53C0D7;
-}
-
 svg {
     background-color: #f0f0f0;
     border-radius: 20px;
@@ -21,10 +13,8 @@ svg {
 .spotLetter {
     text-decoration-line: none;
 }
-
-
-.mainArea {
-    background-color: #53C0D7;
+.map-background{
+    background-color: #78c758;
 }
 
 
