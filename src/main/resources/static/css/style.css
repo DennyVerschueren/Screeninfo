@@ -1,11 +1,33 @@
 
 body {
+    color: #222;
     background-color: white;
     font-family: "Axiforma",arial,sans-serif;
     font-size: 16px;
     line-height: 1.5em;
     position: relative;
 }
+
+div {
+    display: block;
+}
+
+h3 {
+    display: block;
+}
+
+figure {
+    margin: 0;
+    display: block;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
 
 .navbar {
     background: #53C0D7;
@@ -76,3 +98,102 @@ nav .nav-link:hover {
      transition: all .6s;
  }
 
+.events{
+    display: block;
+}
+
+
+.festival {
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.festival:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: all 0.25s ease;
+    transition-duration: 0.25s;
+    opacity: 0.85;
+}
+
+
+.festival-content {
+    /*background-color: #f28629;*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transition: all 0.25s ease;
+}
+
+.festival-date {
+    padding-bottom: 1.25em;
+    color: #FFD31C;
+    font-size: 1.5em;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.festival-name {
+    font-size: 2.3em;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
+}
+
+.festival-cover{
+    float: right;
+}
+
+.festival-contentInner {
+    top: 50%;
+    display: block;
+    padding: 20px 30px 20px 20px;
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+
+.festival-cover, .festival-content {
+    width: 50%;
+}
+
+.festival-link {
+    color: #fff;
+}
+
+.more {
+    color: #fff;
+    font-size: 0.9em;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+
+.festival-moreinfo {
+    position: absolute;
+    right: 40px;
+    bottom: 50px;
+}
+
+
+
+@media only screen and (max-width: 690px){
+
+    .events{
+        display: grid;
+    }
+
+    .festival {
+        float: none;
+        width: auto;
+    }
+
+}
+
+
+@media only screen and (min-width: 691px){
+
+    .festival:nth-child(4n+4) {
+        display: none;
+    }
+
+}
