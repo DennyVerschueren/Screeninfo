@@ -8,11 +8,13 @@ body {
 }
 
 .navbar {
-    border: 1px solid #ddd;
     background: #53C0D7;
+    border-bottom-style: solid;
+    border-bottom-color: #FFD31C;
+    border-bottom-width: 8px;
 }
 nav .nav-link {
-    text-shadow: 1px 1px 1px #333;
+
 }
 
 nav .nav-link:hover {
@@ -25,12 +27,14 @@ nav .nav-link:hover {
 }
 
 
-
-
 .navbar-toggler-icon {
 
     filter: invert(100%);
     border-radius: 50%;
+}
+
+.navtext{
+    color: #253679;
 }
 
 .navbar-light .navbar-toggler {
@@ -67,3 +71,8 @@ nav .nav-link:hover {
     pointer-events: none;
     color: #aaa;
 }
+
+ .dropdown-item{
+     transition: all .6s;
+ }
+
