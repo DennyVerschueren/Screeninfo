@@ -2,6 +2,10 @@
 svg {
     background-color: #f0f0f0;
     border-radius: 20px;
+    border-color: #FFD31C;
+    border-width: 6px;
+    border-style: solid;
+    margin: 5vh 0px;
 }
 
 .empty {
@@ -19,11 +23,17 @@ svg {
 
 .map-filter{
     margin: 0;
+    padding: 4px 0px;
+
 }
 
 .map-checkBox{
     width: 30px;
     height: 30px;
+}
+
+.map-filter-text{
+    color: #253679;
 }
 
 @media screen and (max-width: 550px) {
