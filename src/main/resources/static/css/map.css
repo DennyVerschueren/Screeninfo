@@ -21,8 +21,9 @@ svg {
     margin: 0;
 }
 
-.map-checkBox input:checked ~ ~ .map-checkBox-toillet{
-    background-color: #932222;
+.map-checkBox{
+    width: 30px;
+    height: 30px;
 }
 
 @media screen and (max-width: 550px) {
