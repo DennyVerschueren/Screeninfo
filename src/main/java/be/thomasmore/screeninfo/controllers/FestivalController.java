@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.security.Principal;
+
 @Controller
 public class FestivalController {
 
@@ -14,7 +16,11 @@ public class FestivalController {
     FestivalRepository festivalRepository;
 
     @GetMapping("/festivallijst")
-    public String festivalList(Model model) {
+    public String festivalList(Model model, Principal principal) {
+
+        if(principal != null){
+
+        }
 
         Iterable<Festival> festivals = festivalRepository.findAll();
 
