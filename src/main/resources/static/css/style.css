@@ -253,9 +253,9 @@ nav .nav-link:hover {
     text-decoration-line: none;
 }
 
-@media only screen and (max-width: 690px){
+@media only screen and (max-width: 690px) {
 
-    .events{
+    .events {
         display: grid;
     }
 
@@ -264,8 +264,10 @@ nav .nav-link:hover {
         width: auto;
     }
 
+    .festival:nth-child(4n+4) .festival-moreinfo {
+        display: none;
+    }
 }
-
 
 @media only screen and (min-width: 691px){
 
