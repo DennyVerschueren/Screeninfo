@@ -11,9 +11,8 @@ public class Festival {
     public Integer id;
     private String festivalName;
     private String festivalImage;
-    private String festivalDate;
     private String backgroundColor;
-
+    private String festivalDate;
     private String festivalLink;
 
     public Festival(){
