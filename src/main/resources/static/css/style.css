@@ -99,8 +99,13 @@ nav .nav-link:hover {
      transition: all .6s;
  }
 
+ .events {
+     display: inline-block;
+ }
+
 .festival {
     position: relative;
+    float: left;
     width: 50%;
 }
 

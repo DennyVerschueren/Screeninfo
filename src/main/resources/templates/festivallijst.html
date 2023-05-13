@@ -21,24 +21,26 @@
 <span> <br></span>
 
 
-<div class="row">
 
-  <div th:each="festival :${festivals}" th:style="|background-color: ${festival.getBackgroundColor()}; |" class="festival col-6">
+<div class="events">
 
-    <a th:href="@{|${festival.getFestivalLink()}|}" class="festival-link" >
-      <figure th:style="|background-color: ${festival.getBackgroundColor()}; |" class="festival-cover">
-        <img th:src="@{|${festival.getFestivalImage()}|}"  max-width="484" max-height="600">
-      </figure>
-      <span class="festival-content">
+    <div th:each="festival :${festivals}" th:style="|background-color: ${festival.getBackgroundColor()}; |" class="festival">
+
+        <a th:href="@{|${festival.getFestivalLink()}|}" class="festival-link" >
+            <figure th:style="|background-color: ${festival.getBackgroundColor()}; |" class="festival-cover">
+                <img th:src="@{|${festival.getFestivalImage()}|}"  width="484" height="600">
+            </figure>
+            <span class="festival-content">
                 <span class="festival-contentInner">
                     <span th:text="${festival.getFestivalDate()}" class="festival-date">23 - 24.06.2023</span>
                     <h3 th:text="${festival.getFestivalName()}" class="festival-name">DE KOER</h3>
                 </span>
                 <span class="more festival-moreinfo"> &rarr; Lees meer</span>
             </span>
-    </a>
-  </div>
+        </a>
+    </div>
 </div>
+
 
 <!--<div class="freespaceforfooter"></div>-->
 
