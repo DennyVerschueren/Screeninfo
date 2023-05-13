@@ -263,3 +263,34 @@ nav .nav-link:hover {
     }
 
 }
+
+.arrow {
+    font-size: 30px;
+}
+
+.wrapper{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.fa fa-search{
+    width: 3rem;
+}
+.search-field {
+    display:inline-block;
+    width:80%;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid transparent;
+    border-radius:0;
+    color:#ffc107;
+    box-shadow:none;
+    color:#ffc107;
+    transition:border-bottom-color 0.3s;
+}
+
+.search-field:focus {
+    border-bottom:1px solid #ffc107;
+    transition: all 0.5s;
+    background: transparent;
+}

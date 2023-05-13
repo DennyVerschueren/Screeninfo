@@ -6,12 +6,26 @@
 <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="/css/style.css"/>
 <head>
     <meta charset="UTF-8">
-    <title>MapView</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/map.css}"  href="/css/map.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="internationalization.js"></script>
+
+
 </head>
 <body class="map-background">
+<body>
+<div th:replace="~{/fragments/headerfooter :: header}">Hier komt de header</div>
 
-<div th:replace="~{headerfooter :: header}">Hier komt de header</div>
 <main class="mainArea map-background">
+
+<div class="mainArea">
 
     <form>
         <svg
@@ -361,7 +375,7 @@
                         d="m 130.20717,35.577803 c 0.27612,-1.063905 0.49633,-2.157547 0.55713,-3.257558 0.0462,-0.439422 -0.16493,-0.718875 -0.33379,-1.083632 -0.21263,-0.536776 -0.40228,-1.080749 -0.6358,-1.609244 -0.30182,-0.544309 -0.65072,-1.051131 -0.92493,-1.611505 -0.35761,-0.785445 -0.70298,-1.576572 -1.02551,-2.377089 -0.39998,-0.916481 -0.66082,-1.882116 -0.98002,-2.82725 -0.32711,-0.882682 -0.6124,-1.7781 -0.87049,-2.683054 -0.21902,-0.856568 -0.49592,-1.696189 -0.78548,-2.531009 -0.36771,-1.183101 -0.86447,-2.319267 -1.31209,-3.472765 -0.40491,-0.950613 -0.69964,-1.941154 -1.08348,-2.89973 -0.40087,-0.939012 -0.84362,-1.8584557 -1.29534,-2.7737294 -0.40192,-0.7753537 -0.70886,-1.5892226 -0.97968,-2.4176531 -0.40586,-1.126181 -0.88241,-2.2236893 -1.41309,-3.2961424 -0.57409,-1.0999787 -1.15457,-2.1942712 -1.66389,-3.32620682 -0.32677,-0.69690068 -0.5348,-1.47336258 -0.98053,-2.11182698 -0.14236,-0.203911 -1.03899,-1.1737658 -1.20365,-1.3540928 -0.0103,-0.025826 -0.37556,0.1200893 -0.36524,0.1459159 v 0 c 0.50473,2.2538723 -0.12037,-0.7378116 0.21468,1.5698327 0.11535,0.7944664 0.44847,1.53942119 0.78534,2.25888543 0.53159,1.14028317 1.09392,2.26333427 1.70004,3.36610107 0.50992,1.0323203 0.97804,2.0838451 1.42945,3.1429608 0.34719,0.8471836 0.66452,1.7067022 1.06227,2.5326218 0.41888,0.8990192 0.86192,1.7868798 1.2456,2.7019788 0.39773,0.941746 0.74142,1.904443 1.07139,2.871806 0.42356,1.154946 0.85458,2.308297 1.34638,3.436264 0.29778,0.797317 0.59924,1.595006 0.77468,2.430543 0.24777,0.944305 0.54334,1.874187 0.86512,2.795888 0.34163,0.959145 0.64261,1.933176 1.04137,2.870963 0.35442,0.824039 0.70914,1.648578 1.10372,2.454378 0.28682,0.541117 0.63026,1.040886 0.95413,1.558887 0.26035,0.536851 0.45591,1.101167 0.72789,1.632464 0.11035,0.201811 0.23284,0.451112 0.2617,0.394491 0.0206,-0.0404 0.0133,-0.179509 5.3e-4,-0.136038 -0.0157,0.05298 -0.0252,0.107616 -0.0378,0.161425 -0.25474,1.088853 -0.48543,2.201836 -0.44418,3.325463 -0.008,0.08441 1.18538,0.202065 1.19371,0.117657 z"/>
                 </g>
 
-            <a class="map-spot-pointer" th:each="toillete:${toilletes}" th:href="${toillete.extraLink}">
+            <a th:each="toillete:${toilletes}" th:href="${toillete.extraLink}">
                 <circle id="pointA" th:cx="${toillete.mapCordinatX}" th:cy="${toillete.mapCordinatY}" r="8"
                         fill="#0022cc"/>
                 <text fill="#ffffff" class="spotLetter" font-size="10" font-family="Verdana"
@@ -410,7 +424,7 @@
 </main>
 
 
-<div th:replace="~{headerfooter :: footer}">Hier komt de footer</div>
+<div th:replace="~{/fragments/headerfooter :: footer}">Hier komt de footer</div>
 
 
 </body>
