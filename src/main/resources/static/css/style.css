@@ -28,6 +28,15 @@ img {
     width: auto;
 }
 
+svg {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    border-color: #FFD31C;
+    border-width: 6px;
+    border-style: solid;
+    margin: 5vh 0px;
+}
+
 
 .navbar {
     background: #53C0D7;
@@ -175,6 +184,33 @@ nav .nav-link:hover {
 }
 
 
+.empty {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+}
+
+
+.spotLetter {
+    text-decoration-line: none;
+}
+.map-background{
+    background-color: #78c758;
+}
+
+.map-filter{
+    margin: 0;
+    padding: 4px 0px;
+
+}
+
+.map-checkBox{
+    width: 30px;
+    height: 30px;
+}
+
+.map-filter-text{
+    color: #253679;
+}
 
 @media only screen and (max-width: 690px){
 
@@ -194,6 +230,32 @@ nav .nav-link:hover {
 
     .festival:nth-child(4n+4) {
         display: none;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+
+    svg {
+        max-width: 100%;
+    }
+
+    .mainArea {
+        max-width: 90vw;
+        margin-left: 5%;
+    }
+
+}
+
+@media screen and (min-width: 550px) {
+
+    svg {
+        max-width: 100%;
+    }
+
+    .mainArea {
+        width: 500px;
+        margin: auto;
     }
 
 }
