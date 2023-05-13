@@ -212,6 +212,10 @@ nav .nav-link:hover {
     color: #253679;
 }
 
+.map-spot-pointer{
+    text-decoration-line: none;
+}
+
 @media only screen and (max-width: 690px){
 
     .events{
