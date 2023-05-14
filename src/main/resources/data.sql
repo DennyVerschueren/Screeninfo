@@ -46,3 +46,9 @@ Insert into FESTIVAL_NEDERLANDS values
                                     (2, '29.06 - 17.08.2023', 2,'Parkpop'),
                                     (3, '25.08 - 27.08.2023', 3,'Maanrock'),
                                     (4, 'elke eerste zondag van de maand', 4,'Koopzondagen');
+
+Insert into FESTIVAL_ENGLISH values
+                                    (1, '06.23 - 06.24.2023', 1,'De Koer'),
+                                    (2, '06.29 - 08.17.2023', 2,'Parkpop'),
+                                    (3, '08.25 - 08.27.2023', 3,'Maanrock'),
+                                    (4, 'Every first sunday of the month', 4,'Shopping Sundays');

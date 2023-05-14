@@ -5,7 +5,6 @@ import jakarta.persistence.Id;
 
 @Entity
 public class FestivalEnglish {
-
     @Id
     public Integer id;
     private String festivalName;
