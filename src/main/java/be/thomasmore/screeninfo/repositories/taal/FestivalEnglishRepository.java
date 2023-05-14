@@ -8,6 +8,6 @@ import java.util.Optional;
 
 public interface FestivalEnglishRepository extends CrudRepository<FestivalEnglish,Integer> {
 
-    Optional<FestivalEnglish> SearchByFestivalId(Integer festivalId);
+    //Optional<FestivalEnglish> SearchByFestivalId(Integer festivalId);
 
 }

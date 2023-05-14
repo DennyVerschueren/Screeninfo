@@ -33,11 +33,16 @@ VALUES (
 
 
 
-INSERT INTO "PUBLIC"."FESTIVAL" VALUES
-                                    (1, '#f28629', '23 - 24.06.2023', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/KOER_484x600.png?itok=_jrPk8Ly', 'https://www.dezomerisvanmechelen.be/evenement/de-koer/info','De Koer'),
-                                    (2, '#6FB746', '29.06 - 17.08.2023', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/parkpop_2017.jpg?itok=WC0BUTak', 'https://www.dezomerisvanmechelen.be/evenement/parkpop/info','Parkpop'),
-                                    (3, '#253679', '25.08 - 27.08.2023', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/190823-201655-Maanrock2019-JD%20%28Groot%29.jpg?itok=QF0Db-NJ', 'https://www.maanrock.be/','Maanrock'),
-                                    (4, 'rgb(197, 163, 197)', 'elke eerste zondag van de maand', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/190823-201655-Maanrock2019-JD%20%28Groot%29.jpg?itok=QF0Db-NJ', 'https://shoppenin.mechelen.be/koopzondagen','Koopzondagen');
+INSERT INTO FESTIVAL (ID,BACKGROUND_COLOR,FESTIVAL_IMAGE,FESTIVAL_LINK)
+                                VALUES
+                                    (1, '#f28629','https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/KOER_484x600.png?itok=_jrPk8Ly', 'https://www.dezomerisvanmechelen.be/evenement/de-koer/info'),
+                                    (2, '#6FB746', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/parkpop_2017.jpg?itok=WC0BUTak', 'https://www.dezomerisvanmechelen.be/evenement/parkpop/info'),
+                                    (3, '#253679', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/190823-201655-Maanrock2019-JD%20%28Groot%29.jpg?itok=QF0Db-NJ', 'https://www.maanrock.be/'),
+                                    (4, 'rgb(197, 163, 197)', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/190823-201655-Maanrock2019-JD%20%28Groot%29.jpg?itok=QF0Db-NJ', 'https://shoppenin.mechelen.be/koopzondagen');
 
 
-
+Insert into FESTIVAL_NEDERLANDS values
+                                    (1, '23 - 24.06.2023', 1,'De Koer'),
+                                    (2, '29.06 - 17.08.2023', 2,'Parkpop'),
+                                    (3, '25.08 - 27.08.2023', 3,'Maanrock'),
+                                    (4, 'elke eerste zondag van de maand', 4,'Koopzondagen');

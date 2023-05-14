@@ -1,7 +1,9 @@
 package be.thomasmore.screeninfo.model.taal;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+@Entity
 public class FestivalNederlands {
     @Id
     public Integer id;
