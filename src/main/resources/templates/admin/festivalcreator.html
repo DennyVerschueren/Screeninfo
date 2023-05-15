@@ -21,7 +21,7 @@
 
 <div class="container mb-4 mt-4">
     <div class="border col-md-6 offset-md-3 p-4">
-        <form th:action="@{admin/festivalcreator}" method="post">
+        <form th:action="@{/admin/festivalcreator}" method="post">
             <div class="oneinput">
                 <label for="festivalName" class="form-label">Name: </label>
                 <input type="text" id="festivalName" class="form-control mb-2" th:field="*{festival.festivalName}">
