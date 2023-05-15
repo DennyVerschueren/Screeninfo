@@ -8,7 +8,7 @@
     <h1>CREATE PAGE</h1>
 
     <div>
-        <form th:action="@{/festivalcreator}" method="post">
+        <form th:action="@{admin/festivalcreator}" method="post">
             <div class="oneinput">
                 <label for="festivalName" class="info">Name: </label>
                 <input type="text" id="festivalName" class="editfield" th:field="*{festival.festivalName}">

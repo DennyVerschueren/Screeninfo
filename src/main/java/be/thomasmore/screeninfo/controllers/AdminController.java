@@ -6,14 +6,12 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @Controller
+@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
@@ -34,7 +32,7 @@ public class AdminController {
         return "admin/festivaleditor";
     }
 
-    @PostMapping("/festivaleditor")
+    @PostMapping("admin/festivaleditor")
     public String editFestivalPost(@Valid Festival festival) {
         festivalRepository.save(festival);
         return "redirect:festivallijst/";
@@ -45,7 +43,7 @@ public class AdminController {
         return "admin/festivalcreator";
     }
 
-    @PostMapping("/festivalcreator")
+    @PostMapping("admin/festivalcreator")
     public String addFestivalPost(Model model, @Valid Festival festival) {
         festivalRepository.save(festival);
         return "redirect:/festivallijst";
