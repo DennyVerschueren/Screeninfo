@@ -48,6 +48,6 @@ public class AdminController {
     @PostMapping("/festivalcreator")
     public String addFestivalPost(Model model, @Valid Festival festival) {
         festivalRepository.save(festival);
-        return "redirect:festivallijst/";
+        return "redirect:/festivallijst";
     }
 }
