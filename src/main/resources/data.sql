@@ -38,7 +38,7 @@ INSERT INTO FESTIVAL (ID,BACKGROUND_COLOR,FESTIVAL_IMAGE,FESTIVAL_LINK)
                                     (1, '#f28629','https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/KOER_484x600.png?itok=_jrPk8Ly', 'https://www.dezomerisvanmechelen.be/evenement/de-koer/info'),
                                     (2, '#6FB746', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/parkpop_2017.jpg?itok=WC0BUTak', 'https://www.dezomerisvanmechelen.be/evenement/parkpop/info'),
                                     (3, '#253679', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/190823-201655-Maanrock2019-JD%20%28Groot%29.jpg?itok=QF0Db-NJ', 'https://www.maanrock.be/'),
-                                    (4, 'rgb(197, 163, 197)', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/190823-201655-Maanrock2019-JD%20%28Groot%29.jpg?itok=QF0Db-NJ', 'https://shoppenin.mechelen.be/koopzondagen');
+                                    (4, '#C5A3C5', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/190823-201655-Maanrock2019-JD%20%28Groot%29.jpg?itok=QF0Db-NJ', 'https://shoppenin.mechelen.be/koopzondagen');
 
 
 Insert into FESTIVAL_NEDERLANDS values
