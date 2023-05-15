@@ -26,18 +26,6 @@ public class AdminController {
         return new Festival();
     }
 
-    @GetMapping({"/festivaleditor"})
-    public String editFestival(Model model) {
-        model.addAttribute("festivals", festivalRepository.findAll());
-        return "admin/festivaleditor";
-    }
-
-    @PostMapping("admin/festivaleditor")
-    public String editFestivalPost(@Valid Festival festival) {
-        festivalRepository.save(festival);
-        return "redirect:festivallijst/";
-    }
-
     @GetMapping("/festivalcreator")
     public String addFestival() {
         return "admin/festivalcreator";
