@@ -25,13 +25,13 @@
                 </h4>
                 <p th:if="${loginError}" class="error">Wrong user or password</p>
                 <form class="form-box px-3">
-                    <div class="form-input">
-                        <span><i class="fa fa-envelope-o"></i></span>
-                        <input type="email" name="" placeholder="Email Address" tabindex="10" required>
+                    <div th:action="@{/user/login}" class="form-input"  method="POST">
+                        <span><i class="fa fa-user"></i></span>
+                        <input type="text" id="username" name="username" placeholder="Enter your Username" required>
                     </div>
                     <div class="form-input">
                         <span><i class="fa fa-key"></i></span>
-                        <input type="password" name="" placeholder="Password" required>
+                        <input type="password" id="password" name="password" placeholder="Enter your Password" required>
                     </div>
 
                     <div class="mb-3">
