@@ -246,6 +246,19 @@ nav .nav-link:hover {
 .map-spot-pointer{
     text-decoration-line: none;
 }
+.kader{
+    border: #FFD31C;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 10px;
+    padding: 5vh;
+    background-color: #53C0D7;
+}
+
+.Error{
+    text-align: center;
+    font-size: 3vw;
+}
 
 @media only screen and (max-width: 690px) {
 
@@ -263,13 +276,6 @@ nav .nav-link:hover {
     }
 }
 
-@media only screen and (min-width: 691px){
-
-    .festival:nth-child(4n+4) {
-        display: none;
-    }
-
-}
 
 @media screen and (max-width: 550px) {
 

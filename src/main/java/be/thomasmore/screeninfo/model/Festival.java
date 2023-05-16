@@ -1,12 +1,15 @@
 package be.thomasmore.screeninfo.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 
 @Entity
 public class Festival {
 
-
+    @SequenceGenerator(name = "FestSeqGen", sequenceName = "FestSeq", initialValue = 5, allocationSize = 1)
+    @GeneratedValue(generator = "FestSeqGen")
     @Id
     public Integer id;
     private String festivalName;
