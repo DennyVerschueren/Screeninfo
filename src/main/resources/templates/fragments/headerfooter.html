@@ -34,12 +34,11 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle navtext mx-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Infos
+                            Language
                         </a>
                         <ul class="dropdown-menu" style="background-color: #FFD31C;">
-                            <li><a class="dropdown-item text-center" href="#">Event1</a></li>
-                            <li><a class="dropdown-item text-center" href="#">Event2</a></li>
-                            <li><a class="dropdown-item text-center" href="#">Event3</a></li>
+                            <li><a class="dropdown-item text-center" th:href="@{|?lang=en|}">English</a></li>
+                            <li><a class="dropdown-item text-center" th:href="@{|?lang=nl|}">Nederlands</a></li>
                         </ul>
 
                     <li class="nav-item">

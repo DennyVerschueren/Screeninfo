@@ -35,7 +35,7 @@
                     <span th:text="${festival.getFestivalDate()}" class="festival-date">23 - 24.06.2023</span>
                     <h3 th:text="${festival.getFestivalName()}" class="festival-name">DE KOER</h3>
                 </span>
-                <span class="more festival-moreinfo"> &rarr; Lees meer</span>
+                <span class="more festival-moreinfo" th:text="|&rarr; #{readmore}|"> &rarr; Lees meer</span>
             </span>
         </a>
     </div>
