@@ -13,12 +13,7 @@ figure {
     display: block;
 }
 
-img {
-    border: 0;
-    max-width: 100%;
-    height: auto;
-    width: auto;
-}
+
 
 svg {
     background-color: #f0f0f0;

@@ -55,7 +55,7 @@ public class LoginController {
 
     @GetMapping({"/signup", "/user/signup"})
     public String register(Principal principal) {
-        if (principal != null) return "redirect:/festivallijst";
+        if (principal != null) return "redirect:/home";
         return "user/signup";
     }
 
