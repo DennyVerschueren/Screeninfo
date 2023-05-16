@@ -396,7 +396,7 @@
         <div class="row map-filter">
             <p class="col-1" style="color: #0022cc; max-width: 25px; background-color: #0022cc; border-radius: 50px">
                 °</p>
-            <p class="col-4 map-filter-text"> Toilletes </p>
+            <p class="col-4 map-filter-text" th:text="#{toilettes}"> Toilletes </p>
             <input class="col-1 map-checkBox" type="checkbox" name="filterToillet" value="true" th:checked="${filterToillet}==true">
         </div>
         <div class="row map-filter">
@@ -412,7 +412,7 @@
         <div class="row map-filter">
             <p class="col-1" style="color: #218630; max-width: 25px; background-color: #218630; border-radius: 50px">
                 °</p>
-            <p class="col-4 map-filter-text" >VoedselKraampjes </p>
+            <p class="col-4 map-filter-text" th:text="#{foodstalls}">VoedselKraampjes </p>
             <input class="col-1 map-checkBox" type="checkbox" name="filterVoedKraam" value="true"
                    th:checked="${filterVoedKraam}==true">
         </div>
