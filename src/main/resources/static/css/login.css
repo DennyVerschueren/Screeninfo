@@ -1,6 +1,6 @@
 body{
     height: 100vh;
-    background: #0062E6 !important;
+    background: linear-gradient( to top, deepskyblue, #FFD31C );
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,8 +9,8 @@ body{
 
 .card{
     overflow: hidden;
-    border: 0 !important;
-    border-radius: 20px !important;
+    border: 0
+    border-radius: 20px
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
 
