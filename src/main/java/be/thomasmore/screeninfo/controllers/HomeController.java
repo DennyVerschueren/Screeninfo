@@ -7,9 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @GetMapping({"/","/start"})
+    @GetMapping("/start")
     public String getInternational() {
         return "start";
     }
 
+    @GetMapping("/contact")
+    public String getContactPagina() {
+        return "contact";
+    }
 }
