@@ -256,9 +256,31 @@ nav .nav-link:hover {
                                 /*   Contact Pagina Stijl Start  */
 /*-------------------------------------------------------------------------------------------------------*/
 
+:root {
+    --primary : #27cc66;
+    --secondary : #091126;
+}
 
+.body-contactpage {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.contact{
+    height: 70vh;
+    width: 75vw;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0.2rem .5rem #0006;
+    border-radius: 1rem;
+}
 
+.map, .form {
+    width: 50%;
+    height: 100%;
+}
 
 
 
