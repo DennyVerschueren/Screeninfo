@@ -283,6 +283,39 @@ nav .nav-link:hover {
 }
 
 
+.form{
+    position: relative;
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.form h1 {
+    color: #fff;
+    font: 500 1.8rem sans-serif;
+    padding: 0 2rem;
+
+}
+
+.form form {
+    padding: 0 2rem;
+}
+
+.form input, .form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: .08rem solid var(--primary);
+    background-color: unset;
+    border-radius: 2rem;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form input:not(:first-child) , .form textarea, .form button {
+    margin-top: .8rem;
+}
+
 
 
 /*-------------------------------------------------------------------------------------------------------*/
