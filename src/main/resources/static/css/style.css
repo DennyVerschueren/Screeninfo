@@ -336,7 +336,19 @@ nav .nav-link:hover {
     cursor: pointer;
 }
 
+@media only screen and (max-width: 690px) {
+    .form::before{
+        display: none;
 
+    }
+    .map , .map iframe {
+        display: none;
+    }
+
+    .form {
+        width: 100%;
+    }
+}
 
 /*-------------------------------------------------------------------------------------------------------*/
                                 /*   Contact Pagina Stijl End    */
