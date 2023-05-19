@@ -417,6 +417,7 @@
                    th:checked="${filterVoedKraam}==true">
         </div>
         <input type="submit" value="filter" th:href="@{/map/filter}">
+        <input style="visibility: hidden;" type="text" name="lang" th:value="#{lang.source}">
     </form>
 </main>
 
