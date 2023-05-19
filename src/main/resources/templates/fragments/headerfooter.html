@@ -37,8 +37,8 @@
                             Infos
                         </a>
                         <ul class="dropdown-menu" style="background-color: #FFD31C;">
-                            <li><a class="dropdown-item text-center" th:href="@{|?lang=en|}">English</a></li>
-                            <li><a class="dropdown-item text-center" th:href="@{|?lang=nl|}">Nederlands</a></li>
+                            <li><a class="dropdown-item text-center" th:href="@{|?lang=en|}" th:text="#{lang.eng}">en</a></li>
+                            <li><a class="dropdown-item text-center" th:href="@{|?lang=nl|}" th:text="#{lang.nl}">nl</a></li>
                         </ul>
 
                     <li class="nav-item">
@@ -61,17 +61,17 @@
 
 
                     <li class="nav-item" >
-                        <a class="nav-link text-navtext navtext mx-3" href="/signup">
+                        <a class="nav-link text-navtext navtext mx-3" th:href="|@{/signup(lang = #{lang.source})}|" th:text="#{login.signup}">
                             <span class="login-signup">Signup</span>
                         </a>
                     </li>
                     <li class="nav-item" >
-                        <a class="nav-link text-navtext navtext mx-3"  href="/login">
+                        <a class="nav-link text-navtext navtext mx-3"  th:href="|@{/login(lang = #{lang.source})}|" th:text="#{login.login}">
                             <span class="login-signup">Login</span>
                         </a>
                     </li>
                     <li class="nav-item" >
-                        <a class="nav-link text-navtext navtext mx-3" href="/logout">
+                        <a class="nav-link text-navtext navtext mx-3" th:href="|@{/logout(lang = #{lang.source})}|" th:text="#{login.logout}">
                             <span class="login-signup">Logout</span>
                         </a>
                     </li>
