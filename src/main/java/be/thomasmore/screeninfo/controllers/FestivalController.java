@@ -26,7 +26,7 @@ public class FestivalController {
     @Autowired
     FestivalEnglishRepository englishRepository;
 
-    @GetMapping("/festivallijst")
+    @GetMapping({"/","/festivallijst"})
     public String festivalList(Model model, Principal principal) {
 
         String taal = null;
@@ -67,6 +67,5 @@ public class FestivalController {
 
         return "festivallijst";
     }
+
 }
-
-

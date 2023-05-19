@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start</title>
+    <title>Event</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"  href="/css/start.css" />
@@ -21,24 +21,26 @@
 <span> <br></span>
 
 
-<div class="row">
 
-  <div th:each="festival :${festivals}" th:style="|background-color: ${festival.getBackgroundColor()}; |" class="festival col-6">
+<div class="events">
 
-    <a th:href="@{|${festival.getFestivalLink()}|}" class="festival-link" >
-      <figure th:style="|background-color: ${festival.getBackgroundColor()}; |" class="festival-cover">
-        <img th:src="@{|${festival.getFestivalImage()}|}"  max-width="484" max-height="600">
-      </figure>
-      <span class="festival-content">
+    <div th:each="festival :${festivals}" th:style="|background-color: ${festival.getBackgroundColor()}; |" class="festival">
+
+        <a th:href="@{|${festival.getFestivalLink()}|}" class="festival-link" >
+            <figure th:style="|background-color: ${festival.getBackgroundColor()}; |" class="festival-cover">
+                <img th:src="@{|${festival.getFestivalImage()}|}"  width="484" height="600">
+            </figure>
+            <span class="festival-content">
                 <span class="festival-contentInner">
                     <span th:text="${festival.getFestivalDate()}" class="festival-date">23 - 24.06.2023</span>
                     <h3 th:text="${festival.getFestivalName()}" class="festival-name">DE KOER</h3>
                 </span>
-                <span class="more festival-moreinfo"> &rarr; Lees meer</span>
+                <span class="more festival-moreinfo" th:text="|&rarr; #{readmore}|"> &rarr; Lees meer</span>
             </span>
-    </a>
-  </div>
+        </a>
+    </div>
 </div>
+
 
 <!--<div class="freespaceforfooter"></div>-->
 
