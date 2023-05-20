@@ -72,7 +72,7 @@ public class LoginController {
         autologin(userName, password.trim());
         if (getUpdates)
             emailService.sendEmailWithAttachment(emailAddress, "Welkom", "Welkom bij de Mechelen Feest app");
-        return "redirect:/home";
+        return "redirect:/festivallijst";
     }
 
     private void autologin(String userName, String password) {
