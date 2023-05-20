@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>CREATE PAGE</h1>
+
+    <div>
+        <form th:action="@{/admin/festivalcreator}" method="post">
+            <div class="oneinput">
+                <label for="festivalName" class="info">Name: </label>
+                <input type="text" id="festivalName" class="editfield" th:field="*{festival.festivalName}">
+            </div>
+            <div class="oneinput">
+                <label for="festivalDate" class="info">Date: </label>
+                <input type="text" id="festivalDate" class="editfield" th:field="*{festival.festivalDate}">
+            </div>
+            <div class="oneinput">
+                <label for="festivalLink" class="info">Link: </label>
+                <input type="text" id="festivalLink" class="editfield" th:field="*{festival.festivalLink}">
+            </div>
+            <div class="oneinput">
+                <label for="backgroundColor" class="info">Background Color: </label>
+                <input type="color" id="backgroundColor" class="editfield" th:field="*{festival.backgroundColor}">
+            </div>
+            <div class="oneinput">
+                <label for="festivalImage" class="info">Image: </label>
+                <input type="text" id="festivalImage" class="editfield" th:field="*{festival.festivalImage}">
+            </div>
+            <div class="oneinput">
+                <input type="submit" value="create" class="smallButton buttonLook">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

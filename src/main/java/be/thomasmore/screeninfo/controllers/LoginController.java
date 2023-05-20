@@ -40,12 +40,6 @@ public class LoginController {
         return "user/login";
     }
 
-    @GetMapping({"/logout", "/user/logout"})
-    public String logout(Principal principal, Model model) {
-        if (principal == null) return "redirect:/festivallijst";
-        return "user/logout";
-    }
-
     @GetMapping({"/signup", "/user/signup"})
     public String register(Principal principal) {
         if (principal != null) return "redirect:/festivallijst";

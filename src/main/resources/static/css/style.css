@@ -260,6 +260,11 @@ nav .nav-link:hover {
     border: none;
 }
 
+.logout:hover{
+    color: white;
+}
+
+
 .Error{
     text-align: center;
     font-size: 3vw;
