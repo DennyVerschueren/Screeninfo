@@ -255,6 +255,11 @@ nav .nav-link:hover {
     background-color: #53C0D7;
 }
 
+.logout{
+    background: none;
+    border: none;
+}
+
 .Error{
     text-align: center;
     font-size: 3vw;

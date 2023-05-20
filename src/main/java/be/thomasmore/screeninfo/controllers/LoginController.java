@@ -34,37 +34,30 @@ public class LoginController {
     private EmailService emailService;
     private Logger logger = LoggerFactory.getLogger(LoginController.class);
 
-    @GetMapping("/home")
-    public String home(Model model, Principal principal) {
-        final String loginName = principal == null ? "NOBODY" : principal.getName();
-        logger.info("homepage - logged in as " + loginName);
-        return "home";
-    }
-
     @GetMapping({"/login", "/user/login"})
     public String login(Principal principal, Model model) {
-        if (principal != null) return "redirect:/home";
+        if (principal != null) return "redirect:/festivallijst";
         return "user/login";
     }
 
     @GetMapping({"/logout", "/user/logout"})
     public String logout(Principal principal, Model model) {
-        if (principal == null) return "redirect:/home";
+        if (principal == null) return "redirect:/festivallijst";
         return "user/logout";
     }
 
     @GetMapping({"/signup", "/user/signup"})
     public String register(Principal principal) {
-        if (principal != null) return "redirect:/home";
+        if (principal != null) return "redirect:/festivallijst";
         return "user/signup";
     }
 
     @PostMapping({"/signup", "/user/signup"})
     public String registerPost(Principal principal, @RequestParam String emailAddress, @RequestParam String userName, @RequestParam String password, @RequestParam(required = false, defaultValue = "false") boolean getUpdates) throws MessagingException {
-        if (principal != null) return "redirect:/home";
-        if (emailAddress == null || emailAddress.trim().equals("")) return "redirect:/home";
-        if (userName == null || userName.trim().equals("")) return "redirect:/home";
-        if (password == null || password.trim().equals("")) return "redirect:/home";
+        if (principal != null) return "redirect:/festivallijst";
+        if (emailAddress == null || emailAddress.trim().equals("")) return "redirect:/festivallijst";
+        if (userName == null || userName.trim().equals("")) return "redirect:/festivallijst";
+        if (password == null || password.trim().equals("")) return "redirect:/festivallijst";
         userName = userName.trim();
         String encodedPassword = encoder.encode(password.trim());
         EndUser user = new EndUser(emailAddress, userName, encodedPassword, "ROLE_USER", true);
