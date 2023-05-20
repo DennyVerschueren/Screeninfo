@@ -32,10 +32,14 @@
             </figure>
             <span class="festival-content">
                 <span class="festival-contentInner">
-                    <span th:text="${festival.getFestivalDate()}" class="festival-date">23 - 24.06.2023</span>
+                    <span th:unless="${festival.onGoing}" th:text="${festival.getFestivalDate()}" class="festival-date">23 - 24.06.2023</span>
+                    <span th:if="${festival.onGoing}" class="festival-date">Now Live</span>
                     <h3 th:text="${festival.getFestivalName()}" class="festival-name">DE KOER</h3>
                 </span>
                 <span class="more festival-moreinfo" th:text="|&rarr; #{readmore}|"> &rarr; Lees meer</span>
+                <div th:if="${festival.onGoing}">
+                    <span class="more festival-moreinfo" th:if="${festival.maxCapacity*0.75 <= festival.population}"> druk</span>
+                </div>
             </span>
         </a>
     </div>
