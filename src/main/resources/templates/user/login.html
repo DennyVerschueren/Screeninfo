@@ -27,11 +27,11 @@
                 <form class="form-box px-3">
                     <div th:action="@{/user/login}" class="form-input"  method="POST">
                         <span><i class="fa fa-user"></i></span>
-                        <input type="text" id="username" name="username" th:placeholder="#{login.enterUserName}" required>
+                        <input type="text" id="username" name="username" th:placeholder="#{login.invulUserName}" required>
                     </div>
                     <div class="form-input">
                         <span><i class="fa fa-key"></i></span>
-                        <input type="password" id="password" name="password" th:placeholder="#{login.enterPass}" required>
+                        <input type="password" id="password" name="password" th:placeholder="#{login.invulPass}" required>
                     </div>
 
                     <div class="mb-3">
@@ -56,10 +56,10 @@
 
                     <hr class="my-4">
 
-                    <div class="text-center mb-2">
-                        <p th:text="#{login.geenAccount}">Don't have an account?</p>
+                    <div class="mb-2">
+                        <p style="float:left;" th:text="#{login.geenAccount}">Don't have an account?</p>
 
-                        <a href="/signup" class="register-link" th:text="#{login.signup}">
+                        <a href="/signup" class="register-link" style="float:left" th:text="#{login.signup}">
                             Sign Up
                         </a>
                     </div>
