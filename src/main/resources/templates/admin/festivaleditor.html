@@ -21,30 +21,35 @@
 <div th:replace="~{/fragments/headerfooter :: header}">Hier komt de header</div>
 
 
-<div th:object="${festival}" class="container mb-4 mt-4">
+<div class="container mb-4 mt-4">
     <div th:if="${festival}" class="border col-md-6 offset-md-3 p-4">
+        <div class="row-cols-3">
+            <a class="col-1 align-self-start" th:href="@{|/admin/festivaleditor/*{prev}|}">Previous</a>
+            <span class="col-2 align-self-center" th:text="*{festival.festivalName}">Festival</span>
+            <a class="col-3 align-self-end" th:href="@{|/admin/festivaleditor/*{next}|}">Next</a>
+        </div>
         <form th:action="@{|/admin/festivaleditor/*{id}|}" method="post">
             <div class="oneinput">
                 <label for="festivalName" class="form-label">Name: </label>
-                <input type="text" id="festivalName" class="form-control mb-2" th:field="*{festivalName}">
+                <input type="text" id="festivalName" class="form-control mb-2" th:field="*{festival.festivalName}">
             </div>
             <div class="oneinput">
                 <label for="festivalDate" class="form-label">Date: </label>
-                <input type="text" id="festivalDate" class="form-control mb-2" th:field="*{festivalDate}">
+                <input type="text" id="festivalDate" class="form-control mb-2" th:field="*{festival.festivalDate}">
             </div>
             <div class="oneinput">
                 <label for="festivalLink" class="form-label">Link: </label>
-                <input type="text" id="festivalLink" class="form-control mb-2" th:field="*{festivalLink}">
+                <input type="text" id="festivalLink" class="form-control mb-2" th:field="*{festival.festivalLink}">
             </div>
             <div class="oneinput">
                 <label for="backgroundColor" class="form-label">Background Color: </label>
                 <input type="color" id="backgroundColor" class="form-control form-control-color mb-2"
-                       th:field="*{backgroundColor}">
+                       th:field="*{festival.backgroundColor}">
             </div>
             <div class="oneinput">
                 <label for="festivalImage" class="form-label">Image: </label>
                 <input type="text" id="festivalImage" class="form-control mb-2" name="festivalImage"
-                       th:field="*{festivalImage}">
+                       th:field="*{festival.festivalImage}">
             </div>
             <div class="oneinput">
                 <input type="submit" value="Edit" class="btn btn-primary mt-2">

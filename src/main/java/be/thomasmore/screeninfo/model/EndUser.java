@@ -12,6 +12,8 @@ public class EndUser {
     private String username;
     private String password;
     private String role;
+
+    private String taal; // NEDERLANDS , ENGLISH
     private boolean getUpdates;
 
     public EndUser(String emailAddress, String username, String password, String role, boolean getUpdates) {
@@ -21,6 +23,7 @@ public class EndUser {
         this.password = password;
         this.role = role;
         this.getUpdates = getUpdates;
+        taal = "NEDERLANDS";
     }
 
     public EndUser() {
@@ -75,5 +78,11 @@ public class EndUser {
         return id;
     }
 
+    public String getTaal() {
+        return taal;
+    }
 
+    public void setTaal(String taal) {
+        this.taal = taal;
+    }
 }

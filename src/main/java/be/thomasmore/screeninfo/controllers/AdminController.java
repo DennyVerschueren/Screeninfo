@@ -27,6 +27,18 @@ public class AdminController {
         }
         Festival festival = optionalFestival.get();
         model.addAttribute("festival", festival);
+        Optional<Festival> optionalPrevFestival = festivalRepository.findFirstByIdLessThanOrderByIdDesc(festival.id);
+        Optional<Festival> optionalNextFestival = festivalRepository.findFirstByIdGreaterThanOrderById(festival.id);
+        if (optionalPrevFestival.isPresent()) {
+            model.addAttribute("prev", optionalPrevFestival.get().getId());
+        } else {
+            model.addAttribute("prev", festivalRepository.findFirstByOrderByIdDesc().get().getId());
+        }
+        if (optionalNextFestival.isPresent()) {
+            model.addAttribute("next", optionalNextFestival.get().getId());
+        } else {
+            model.addAttribute("next", festivalRepository.findFirstByOrderByIdAsc().get().getId());
+        }
 
         return "admin/festivaleditor";
     }
