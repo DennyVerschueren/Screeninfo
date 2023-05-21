@@ -38,11 +38,11 @@
                 </span>
                 <span class="more festival-moreinfo" th:text="|&rarr; #{readmore}|"> &rarr; Lees meer</span>
                 <div th:if="${festival.onGoing}">
-                    <span class="festival-active" style="border-color: #b51d35; background-color: #b51d3545; color: #eaacac" th:if="${festival.maxCapacity <= festival.population}"> Vol</span>
-                    <span class="festival-active" style="border-color: #df7e34; background-color: #df7e3445; color: #f6d1a0"th:if="${festival.maxCapacity*0.75 <= festival.population && festival.maxCapacity > festival.population}">druk</span>
-                    <span class="festival-active" style="border-color: #e9d85b; background-color: #e9d85b45; color: #f6efc1"th:if="${festival.maxCapacity*0.5 <= festival.population && festival.maxCapacity*0.75 > festival.population }">middelmatig</span>
-                    <span class="festival-active" style="border-color: #99e467; background-color: #99e46745; color: #dff0cc"th:if="${festival.maxCapacity*0.25 <= festival.population && festival.maxCapacity*0.5 > festival.population }">rustig</span>
-                    <span class="festival-active" style="border-color: #aaecc2; background-color: #aaecc245; color: #dff0cc"th:if="${festival.maxCapacity*0.25 > festival.population}">leeg</span>
+                    <span class="festival-active" style="border-color: #b51d35; background-color: #b51d3545; color: #eaacac" th:if="${festival.maxCapacity <= festival.population}" th:text="#{festival.vol}"> Vol</span>
+                    <span class="festival-active" style="border-color: #df7e34; background-color: #df7e3445; color: #f6d1a0"th:if="${festival.maxCapacity*0.75 <= festival.population && festival.maxCapacity > festival.population}" th:text="#{festival.druk}">druk</span>
+                    <span class="festival-active" style="border-color: #e9d85b; background-color: #e9d85b45; color: #f6efc1"th:if="${festival.maxCapacity*0.5 <= festival.population && festival.maxCapacity*0.75 > festival.population }" th:text="#{festival.middelmatig}">middelmatig druk</span>
+                    <span class="festival-active" style="border-color: #99e467; background-color: #99e46745; color: #dff0cc"th:if="${festival.maxCapacity*0.25 <= festival.population && festival.maxCapacity*0.5 > festival.population }" th:text="#{festival.rustig}">rustig</span>
+                    <span class="festival-active" style="border-color: #aaecc2; background-color: #aaecc245; color: #dff0cc"th:if="${festival.maxCapacity*0.25 > festival.population}" th:text="#{festival.leeg}">leeg</span>
                 </div>
             </span>
         </a>
