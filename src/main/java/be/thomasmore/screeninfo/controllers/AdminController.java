@@ -17,18 +17,17 @@ public class AdminController {
     @Autowired
     private FestivalRepository festivalRepository;
 
-    @ModelAttribute("festival")
-    public Festival findParty(@PathVariable(required = false) Integer id) {
-        if (id!=null) {
-            Optional<Festival> optionalFestival = festivalRepository.findById(id);
-            if (optionalFestival.isPresent()) return optionalFestival.get();
+    @GetMapping({"/festivaleditor", "/festivaleditor/{id}"})
+    public String editFestival(Model model, @PathVariable(required = false) Integer id) {
+        Optional<Festival> optionalFestival;
+        if (id != null) {
+            optionalFestival = festivalRepository.findById(id);
+        } else {
+            optionalFestival = festivalRepository.findFirstByOrderByIdAsc();
         }
-        return new Festival();
-    }
+        Festival festival = optionalFestival.get();
+        model.addAttribute("festival", festival);
 
-    @GetMapping({"/festivaleditor/{id}"})
-    public String editFestival(Model model, @PathVariable int id) {
-        model.addAttribute("festivals", festivalRepository.findAll());
         return "admin/festivaleditor";
     }
 
@@ -39,7 +38,8 @@ public class AdminController {
     }
 
     @GetMapping("/festivalcreator")
-    public String addFestival() {
+    public String addFestival(Model model) {
+        model.addAttribute("festival", new Festival());
         return "admin/festivalcreator";
     }
 
