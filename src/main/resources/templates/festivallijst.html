@@ -38,7 +38,12 @@
                 </span>
                 <span class="more festival-moreinfo" th:text="|&rarr; #{readmore}|"> &rarr; Lees meer</span>
                 <div th:if="${festival.onGoing}">
-                    <span class="more festival-moreinfo" th:if="${festival.maxCapacity*0.75 <= festival.population}"> druk</span>
+                    <span class="more festival-moreinfo" th:if="${festival.maxCapacity <= festival.population}"> Vol</span>
+                    <span class="more festival-moreinfo" th:if="${festival.maxCapacity*0.75 <= festival.population && festival.maxCapacity > festival.population}">druk</span>
+                    <span class="more festival-moreinfo" th:if="${festival.maxCapacity*0.5 <= festival.population && festival.maxCapacity*0.75 > festival.population }">middelmatig</span>
+                    <span class="more festival-moreinfo" th:if="${festival.maxCapacity*0.25 <= festival.population && festival.maxCapacity*0.5 > festival.population }">rustig</span>
+                    <span class="more festival-moreinfo" th:if="${festival.maxCapacity*0.25 > festival.population}">leeg</span>
+                    <span th:text="${festival.population}"></span>
                 </div>
             </span>
         </a>
