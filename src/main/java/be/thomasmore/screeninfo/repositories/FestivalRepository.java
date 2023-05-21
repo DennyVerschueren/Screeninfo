@@ -7,4 +7,6 @@ import java.util.Optional;
 
 public interface FestivalRepository extends CrudRepository<Festival,Integer> {
     Optional<Festival> findFirstByOrderByIdAsc();
+
+    Iterable<Festival> findAllByOrderByOnGoingDesc();
 }
