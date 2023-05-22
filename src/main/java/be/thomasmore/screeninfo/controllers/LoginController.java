@@ -47,11 +47,13 @@ public class LoginController {
     }
 
     @PostMapping({"/signup", "/user/signup"})
-    public String registerPost(Principal principal, @RequestParam String emailAddress, @RequestParam String userName, @RequestParam String password, @RequestParam(required = false, defaultValue = "false") boolean getUpdates) throws MessagingException {
+    public String registerPost(Principal principal, @RequestParam String emailAddress, @RequestParam String userName, @RequestParam String password, @RequestParam(required = false, defaultValue = "false") boolean getUpdates,@RequestParam(required = false, defaultValue = "nl") String language) throws MessagingException {
+        language = checkLanguageCode(language);
+
         if (principal != null) return "redirect:/festivallijst";
-        if (emailAddress == null || emailAddress.trim().equals("")) return "redirect:/festivallijst";
-        if (userName == null || userName.trim().equals("")) return "redirect:/festivallijst";
-        if (password == null || password.trim().equals("")) return "redirect:/festivallijst";
+        if (emailAddress == null || emailAddress.trim().equals("")) return "redirect:/festivallijst?lang="+language;
+        if (userName == null || userName.trim().equals("")) return "redirect:/festivallijst?lang="+language;
+        if (password == null || password.trim().equals("")) return "redirect:/festivallijst?lang="+language;
         userName = userName.trim();
         String encodedPassword = encoder.encode(password.trim());
         EndUser user = new EndUser(emailAddress, userName, encodedPassword, "ROLE_USER", true);
@@ -59,7 +61,7 @@ public class LoginController {
         autologin(userName, password.trim());
         if (getUpdates)
             emailService.sendEmailWithAttachment(emailAddress, "Welkom", "Welkom bij de Mechelen Feest app");
-        return "redirect:/festivallijst";
+        return "redirect:/festivallijst?lang="+language;
     }
 
     private void autologin(String userName, String password) {
@@ -79,5 +81,11 @@ public class LoginController {
     @GetMapping("/login-error")
     public String loginError(Model model) {
         return "loginError";
+    }
+
+    private String checkLanguageCode(String language){
+        if(language.trim().equals(""))
+            return "nl";
+        return language;
     }
 }

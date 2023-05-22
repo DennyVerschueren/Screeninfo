@@ -59,10 +59,11 @@
                     <div class="mb-2">
                         <p style="float:left;" th:text="#{login.geenAccount}">Don't have an account?</p>
 
-                        <a href="/signup" class="register-link" style="float:left" th:text="#{login.signup}">
+                        <a th:href="|@{/signup(lang = #{lang.source})}|" class="register-link" style="float:left" th:text="#{login.signup}">
                             Sign Up
                         </a>
                     </div>
+                    <input style="visibility: hidden;" type="text" name="lang" th:value="#{lang.source}">
                 </form>
             </div>
         </div>
