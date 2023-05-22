@@ -1,4 +1,4 @@
-package be.thomasmore.screeninfo;
+package be.thomasmore.screeninfo.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

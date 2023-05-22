@@ -24,8 +24,8 @@
                     Login into account
                 </h4>
                 <p th:if="${loginError}" class="error" th:text="#{login.verkeerdePass}">Wrong user or password</p>
-                <form class="form-box px-3">
-                    <div th:action="@{/user/login}" class="form-input"  method="POST">
+                <form th:action="@{/user/login}" method="post" class="form-box px-3">
+                    <div class="form-input">
                         <span><i class="fa fa-user"></i></span>
                         <input type="text" id="username" name="username" th:placeholder="#{login.invulUserName}" required>
                     </div>
