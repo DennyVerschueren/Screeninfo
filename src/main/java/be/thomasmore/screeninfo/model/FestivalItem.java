@@ -1,12 +1,12 @@
 package be.thomasmore.screeninfo.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class FestivalItem {
     private String festivalName;
     private String festivalImage;
     private String backgroundColor;
-    private String Date;
+    private String date;
     private String festivalLink;
     private boolean onGoing; // om manueel te zeggen dat een event bezig is
 
@@ -23,7 +23,20 @@ public class FestivalItem {
         onGoing = festival.isOnGoing();
 
         // voor nu debuggen
-        Date = festival.getStartDate().toLocalDate().toString();
+        date = "";
+        LocalDate startDate = festival.getStartDate().toLocalDate();
+        LocalDate endDate = festival.getEndDate().toLocalDate();
+        if(startDate.getYear() != endDate.getYear()){
+            date = startDate.getDayOfMonth()+"-"+ startDate.getMonthValue()+"-"+startDate.getYear() + " - ";
+        }
+        else if(startDate.getMonth() != endDate.getMonth()){
+            date = startDate.getDayOfMonth()+"-"+ startDate.getMonthValue() + " - ";
+        }
+        else if(startDate.getDayOfMonth() != endDate.getDayOfMonth()){
+            date = startDate.getDayOfMonth() + " - ";
+        }
+            date += endDate.getDayOfMonth()+"-"+endDate.getMonthValue()+"-"+endDate.getYear();
+
         maxCapacity = festival.getMaxCapacity();
         population = festival.getPopulation();
     }
@@ -52,12 +65,12 @@ public class FestivalItem {
         this.backgroundColor = backgroundColor;
     }
 
-    public void setDate(String Date) {
-        this.Date = Date;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setFestivalLink(String festivalLink) {
