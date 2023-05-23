@@ -6,7 +6,7 @@ public class FestivalItem {
     private String festivalName;
     private String festivalImage;
     private String backgroundColor;
-    private Date Date;
+    private String Date;
     private String festivalLink;
     private boolean onGoing; // om manueel te zeggen dat een event bezig is
 
@@ -23,7 +23,7 @@ public class FestivalItem {
         onGoing = festival.isOnGoing();
 
         // voor nu debuggen
-        Date = festival.getStartDate();
+        Date = festival.getStartDate().toLocalDate().toString();
         maxCapacity = festival.getMaxCapacity();
         population = festival.getPopulation();
     }
@@ -52,11 +52,11 @@ public class FestivalItem {
         this.backgroundColor = backgroundColor;
     }
 
-    public void setDate(Date Date) {
+    public void setDate(String Date) {
         this.Date = Date;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return Date;
     }
 

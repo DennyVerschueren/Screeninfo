@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 public class Festival {
