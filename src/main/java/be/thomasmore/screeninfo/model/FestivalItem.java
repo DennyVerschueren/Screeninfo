@@ -11,6 +11,13 @@ public class FestivalItem {
     private boolean onGoing; // om manueel te zeggen dat een event bezig is
 
     public FestivalItem(Festival festival){
+        festivalName = festival.getFestivalName();
+        festivalImage = festival.getFestivalImage();
+        backgroundColor = festival.getBackgroundColor();
+        festivalLink = festival.getFestivalLink();
+        onGoing = festival.isOnGoing();
+
+        festivalDate = festival.getStartDate(); // voor nu debuggen
     }
 
     public String getFestivalName() {
