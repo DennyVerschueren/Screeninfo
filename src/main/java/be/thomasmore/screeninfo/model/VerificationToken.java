@@ -16,17 +16,8 @@ public class VerificationToken {
 
     private String token;
 
-    @OneToOne(targetEntity = EndUser.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "ID")
-    private EndUser user;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
 
-    private Date expiryDate;
-
-    private Date calculateExpiryDate(int expiryTimeInMinutes) {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(new Timestamp(cal.getTime().getTime()));
-        cal.add(Calendar.MINUTE, expiryTimeInMinutes);
-        return new Date(cal.getTime().getTime());
-    }
 
 }
