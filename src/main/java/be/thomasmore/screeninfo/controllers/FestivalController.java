@@ -24,4 +24,9 @@ public class FestivalController {
         return "festivallijst";
     }
 
+    @GetMapping("/festivallijst/{filter}")
+    public String festivalListWithFilter(Model model){
+        return "festivallijst";
+    }
+
 }
