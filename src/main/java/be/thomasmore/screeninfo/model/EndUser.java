@@ -87,4 +87,12 @@ public class EndUser {
     public void setTaal(String taal) {
         this.taal = taal;
     }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 }
