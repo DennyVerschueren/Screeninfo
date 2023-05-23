@@ -71,8 +71,8 @@ public class LoginController {
         return "redirect:/festivallijst?lang="+language;
     }
 
-    @RequestMapping(value="/confirm-account", method= {RequestMethod.GET, RequestMethod.POST})
-    public String confirmUserAccount(@RequestParam String verificationToken, @RequestParam(required = false, defaultValue = "nl") String language) {
+    @GetMapping("/confirm-account/{verificationToken}")
+    public String confirmUserAccount(@PathVariable String verificationToken, @RequestParam(required = false, defaultValue = "nl") String language) {
         language = checkLanguageCode(language);
         VerificationToken token = verificationTokenRepository.findByToken(verificationToken);
         if(token != null)

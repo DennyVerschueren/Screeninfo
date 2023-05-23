@@ -30,7 +30,7 @@ public class EmailService {
         message.setTo(user.getEmailAddress());
         message.setSubject("Complete Registration!");
         message.setText("To confirm your account, please click here : "
-                +"http://localhost:8080/confirm-account?token="+token.getToken());
+                +"http://localhost:8080/confirm-account/"+token.getToken());
         mailSender.send(message);
     }
 
