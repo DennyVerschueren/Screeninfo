@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.security.Principal;
+import java.sql.Date;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +28,10 @@ public class FestivalController {
         List<FestivalItem> festivalItems = new ArrayList<>(); // om een makelijker manier te hebben voor html scripts
 
         for (Festival festival:festivals) {
-            FestivalItem newFestivalItem = new FestivalItem(festival);
-            festivalItems.add(newFestivalItem);
+            if(Date.from(java.time.LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()).before(festival.getEndDate())){
+                FestivalItem newFestivalItem = new FestivalItem(festival);
+                festivalItems.add(newFestivalItem);
+            }
         }
 
         model.addAttribute("festivals", festivalItems);
