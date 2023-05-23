@@ -6,9 +6,14 @@ public class FestivalItem {
     private String festivalName;
     private String festivalImage;
     private String backgroundColor;
-    private Date festivalDate;
+    private Date Date;
     private String festivalLink;
     private boolean onGoing; // om manueel te zeggen dat een event bezig is
+
+
+    // !!moet weg!! voor nu steekt dit er in om html te laten werken
+    private Integer maxCapacity; // dit is voor de barometer
+    private Integer population; // dit is voor hoeveel man er momenteel is
 
     public FestivalItem(Festival festival){
         festivalName = festival.getFestivalName();
@@ -17,7 +22,10 @@ public class FestivalItem {
         festivalLink = festival.getFestivalLink();
         onGoing = festival.isOnGoing();
 
-        festivalDate = festival.getStartDate(); // voor nu debuggen
+        // voor nu debuggen
+        Date = festival.getStartDate();
+        maxCapacity = festival.getMaxCapacity();
+        population = festival.getPopulation();
     }
 
     public String getFestivalName() {
@@ -44,12 +52,12 @@ public class FestivalItem {
         this.backgroundColor = backgroundColor;
     }
 
-    public void setFestivalDate(Date festivalDate) {
-        this.festivalDate = festivalDate;
+    public void setDate(Date Date) {
+        this.Date = Date;
     }
 
-    public Date getFestivalDate() {
-        return festivalDate;
+    public Date getDate() {
+        return Date;
     }
 
     public void setFestivalLink(String festivalLink) {
@@ -66,5 +74,26 @@ public class FestivalItem {
 
     public boolean isOnGoing() {
         return onGoing;
+    }
+
+
+
+
+
+    // !!moet weg!!
+    public Integer getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(Integer population) {
+        this.population = population;
+    }
+
+    public Integer getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public void setMaxCapacity(Integer maxCapacity) {
+        this.maxCapacity = maxCapacity;
     }
 }

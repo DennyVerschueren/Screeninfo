@@ -30,7 +30,7 @@ public class FestivalController {
             festivalItems.add(newFestivalItem);
         }
 
-        model.addAttribute("festivals", festivals);
+        model.addAttribute("festivals", festivalItems);
 
         return "festivallijst";
     }
