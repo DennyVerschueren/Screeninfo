@@ -2,7 +2,9 @@ package be.thomasmore.screeninfo.controllers;
 
 import be.thomasmore.screeninfo.model.EmailService;
 import be.thomasmore.screeninfo.model.EndUser;
+import be.thomasmore.screeninfo.model.VerificationToken;
 import be.thomasmore.screeninfo.repositories.UserRepository;
+import be.thomasmore.screeninfo.repositories.VerificationTokenRepository;
 import jakarta.mail.MessagingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,9 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
@@ -26,6 +26,9 @@ import java.security.Principal;
 public class LoginController {
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private VerificationTokenRepository verificationTokenRepository;
     @Autowired
     private PasswordEncoder encoder;
     @Autowired
@@ -58,9 +61,26 @@ public class LoginController {
         String encodedPassword = encoder.encode(password.trim());
         EndUser user = new EndUser(emailAddress, userName, encodedPassword, "ROLE_USER", true);
         userRepository.save(user);
+        VerificationToken token = new VerificationToken(user);
+        verificationTokenRepository.save(token);
+        emailService.sendVerificationEmail(user, token);
+        System.out.println("Confirmation Token: " + token.getToken());
         autologin(userName, password.trim());
         if (getUpdates)
             emailService.sendEmailWithAttachment(emailAddress, "Welkom", "Welkom bij de Mechelen Feest app");
+        return "redirect:/festivallijst?lang="+language;
+    }
+
+    @RequestMapping(value="/confirm-account", method= {RequestMethod.GET, RequestMethod.POST})
+    public String confirmUserAccount(@RequestParam String verificationToken, @RequestParam(required = false, defaultValue = "nl") String language) {
+        language = checkLanguageCode(language);
+        VerificationToken token = verificationTokenRepository.findByToken(verificationToken);
+        if(token != null)
+        {
+            EndUser user = userRepository.findByEmailAddress(token.getUser().getEmailAddress());
+            user.setEnabled(true);
+            userRepository.save(user);
+        }
         return "redirect:/festivallijst?lang="+language;
     }
 
