@@ -12,10 +12,8 @@ public class FestivalItem {
     private String festivalLink;
     private boolean onGoing; // om manueel te zeggen dat een event bezig is
 
+    private String busyness; // om op voorant te berekenen hoe druk he is
 
-    // !!moet weg!! voor nu steekt dit er in om html te laten werken
-    private Integer maxCapacity; // dit is voor de barometer
-    private Integer population; // dit is voor hoeveel man er momenteel is
 
     public FestivalItem(Festival festival){
         festivalName = festival.getFestivalName();
@@ -40,8 +38,25 @@ public class FestivalItem {
         }
             date += endDate.getDayOfMonth()+"-"+endDate.getMonthValue()+"-"+endDate.getYear();
 
-        maxCapacity = festival.getMaxCapacity();
-        population = festival.getPopulation();
+        int maxCapacity = festival.getMaxCapacity();
+        int population = festival.getPopulation();
+
+        if(maxCapacity < population){
+            busyness = "FULL";
+        }
+        else if(maxCapacity * 0.75 < population){
+            busyness = "BUSY";
+        }
+        else if(maxCapacity * 0.5 < population){
+            busyness = "MEDIUM BUSY";
+        }
+        else if(maxCapacity * 0.25 < population){
+            busyness = "CALM";
+        }
+        else {
+            busyness = "EMPTY";
+        }
+
     }
 
     public String getFestivalName() {
@@ -92,24 +107,12 @@ public class FestivalItem {
         return onGoing;
     }
 
-
-
-
-
-    // !!moet weg!!
-    public Integer getPopulation() {
-        return population;
+    public String getBusyness() {
+        return busyness;
     }
 
-    public void setPopulation(Integer population) {
-        this.population = population;
+    public void setBusyness(String busyness) {
+        this.busyness = busyness;
     }
 
-    public Integer getMaxCapacity() {
-        return maxCapacity;
-    }
-
-    public void setMaxCapacity(Integer maxCapacity) {
-        this.maxCapacity = maxCapacity;
-    }
 }
