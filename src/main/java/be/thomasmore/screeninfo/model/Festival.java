@@ -17,7 +17,8 @@ public class Festival {
     private String festivalName;
     private String festivalImage;
     private String backgroundColor;
-    private Date festivalDate;
+    private Date startDate;
+    private Date endDate;
     private String festivalLink;
     private Integer maxCapacity; // dit is voor de barometer
     private Integer population; // dit is voor hoeveel man er momenteel is
@@ -51,12 +52,20 @@ public class Festival {
         this.festivalImage = festivalImage;
     }
 
-    public Date getFestivalDate() {
-        return festivalDate;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setFestivalDate(Date festivalDate) {
-        this.festivalDate = festivalDate;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public String getBackgroundColor() {

@@ -32,8 +32,9 @@ VALUES (
 
 
 
-INSERT INTO "PUBLIC"."FESTIVAL" VALUES
-                                    (1, '#f28629', '2023-06-23', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/KOER_484x600.png?itok=_jrPk8Ly', 'https://www.dezomerisvanmechelen.be/evenement/de-koer/info','De Koer',10000,false,0),
-                                    (2, '#253679', '2023-08-25', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/190823-201655-Maanrock2019-JD%20%28Groot%29.jpg?itok=QF0Db-NJ', 'https://www.maanrock.be/','Maanrock',1000,false,0),
-                                    (3, '#6FB746', '2023-06-29', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/parkpop_2017.jpg?itok=WC0BUTak', 'https://www.dezomerisvanmechelen.be/evenement/parkpop/info','Parkpop',1000,false,0),
-                                    (4, '#4e8496', '2023-05-25', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/190823-201655-Maanrock2019-JD%20%28Groot%29.jpg?itok=QF0Db-NJ', null,'Momenteele Event',1000,true,756);
+INSERT INTO "PUBLIC"."FESTIVAL" (ID,BACKGROUND_COLOR, START_DATE ,END_DATE ,FESTIVAL_IMAGE, FESTIVAL_LINK, FESTIVAL_NAME, MAX_CAPACITY, ON_GOING, POPULATION)
+                                VALUES
+                                    (1, '#f28629', '2023-06-23', '2023-06-24', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/KOER_484x600.png?itok=_jrPk8Ly', 'https://www.dezomerisvanmechelen.be/evenement/de-koer/info','De Koer',10000,false,0),
+                                    (2, '#253679', '2023-08-25', '2023-08-27', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/190823-201655-Maanrock2019-JD%20%28Groot%29.jpg?itok=QF0Db-NJ', 'https://www.maanrock.be/','Maanrock',1000,false,0),
+                                    (3, '#6FB746', '2023-06-29', '2023-08-17', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/parkpop_2017.jpg?itok=WC0BUTak', 'https://www.dezomerisvanmechelen.be/evenement/parkpop/info','Parkpop',1000,false,0),
+                                    (4, '#4e8496', '2023-05-25', '2023-06-15', 'https://www.dezomerisvanmechelen.be/sites/default/files/styles/event_cover_front/public/events/cover/190823-201655-Maanrock2019-JD%20%28Groot%29.jpg?itok=QF0Db-NJ', null,'Momenteele Event',1000,true,756);

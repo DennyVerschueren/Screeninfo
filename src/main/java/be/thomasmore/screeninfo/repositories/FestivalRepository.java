@@ -10,5 +10,5 @@ public interface FestivalRepository extends CrudRepository<Festival,Integer> {
     Optional<Festival> findFirstByOrderByIdDesc();
     Optional<Festival> findFirstByIdLessThanOrderByIdDesc(int id);
     Optional<Festival> findFirstByIdGreaterThanOrderById(int id);
-    Iterable<Festival> findAllByOrderByFestivalDateAsc();
+    Iterable<Festival> findAllByOrderByStartDateAsc();
 }

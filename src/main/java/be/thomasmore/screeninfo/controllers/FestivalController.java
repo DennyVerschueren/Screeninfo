@@ -18,7 +18,7 @@ public class FestivalController {
     @GetMapping({"/","/festivallijst"})
     public String festivalList(Model model, Principal principal) {
 
-        Iterable<Festival> festivals = festivalRepository.findAllByOrderByFestivalDateAsc();
+        Iterable<Festival> festivals = festivalRepository.findAllByOrderByStartDateAsc();
         model.addAttribute("festivals", festivals);
 
         return "festivallijst";
