@@ -1,5 +1,10 @@
 
-
+.language-icon {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
 div {
     display: block;
 }
@@ -84,8 +89,9 @@ nav .nav-link {
 }
 
 nav .nav-link:hover {
+    color:#253679;
+    font-weight: bold;
 
-    color: aqua;
 }
 
 .navbar-collapse{
@@ -118,7 +124,6 @@ nav .nav-link:hover {
 
 }
 
-/* Bootstrap 4 text input with search icon */
 
 .has-search .form-control {
     padding-left: 2.375rem;
@@ -314,7 +319,11 @@ nav .nav-link:hover {
     padding: 5vh;
     background-color: #53C0D7;
 }
-
+.login-button{
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #253679 ;
+}
 .logout{
     background: none;
     border: none;
@@ -329,6 +338,7 @@ nav .nav-link:hover {
     text-decoration: none;
 }
 .signup-button {
+    font-weight: bold;
     padding: 0.3em 1em;
     border: none;
     outline: none;
