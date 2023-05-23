@@ -295,22 +295,22 @@ nav .nav-link:hover {
 
 .filterbutton {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /*justify-content: center;*/
+    /*align-items: center;*/
     background: #53C0D7;
-    padding: 20px;
+    padding: 2px;
 }
 
-/*.filterbutton button {*/
-/*    margin-left: 30px;*/
-/*}*/
+.filterbutton button {
+    margin-left: 30px;
+}
 
 .logoMain {
     display: flex;
     justify-content: center;
     align-items: center;
     background: #53C0D7;
-    padding: 90px;
+    padding: 100px;
 }
 
 .geleball{
