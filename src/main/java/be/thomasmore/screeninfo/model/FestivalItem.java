@@ -1,6 +1,8 @@
 package be.thomasmore.screeninfo.model;
 
+import java.sql.Date;
 import java.time.LocalDate;
+import java.time.ZoneId;
 
 public class FestivalItem {
     private String festivalName;
@@ -20,7 +22,8 @@ public class FestivalItem {
         festivalImage = festival.getFestivalImage();
         backgroundColor = festival.getBackgroundColor();
         festivalLink = festival.getFestivalLink();
-        onGoing = festival.isOnGoing();
+
+        onGoing = Date.from(java.time.LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()).after(festival.getStartDate());
 
         // voor nu debuggen
         date = "";
