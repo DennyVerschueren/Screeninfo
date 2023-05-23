@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 
+import java.util.Date;
+
 @Entity
 public class Festival {
 
@@ -15,7 +17,7 @@ public class Festival {
     private String festivalName;
     private String festivalImage;
     private String backgroundColor;
-    private String festivalDate;
+    private Date festivalDate;
     private String festivalLink;
     private Integer maxCapacity; // dit is voor de barometer
     private Integer population; // dit is voor hoeveel man er momenteel is
@@ -49,11 +51,11 @@ public class Festival {
         this.festivalImage = festivalImage;
     }
 
-    public String getFestivalDate() {
+    public Date getFestivalDate() {
         return festivalDate;
     }
 
-    public void setFestivalDate(String festivalDate) {
+    public void setFestivalDate(Date festivalDate) {
         this.festivalDate = festivalDate;
     }
 
