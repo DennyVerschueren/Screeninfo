@@ -13,7 +13,7 @@ public class HealthyController {
 
 
     @GetMapping("/healthy")
-    public Integer healthCheck() {
-        return 200;
+    public String healthCheck() {
+        return "200 OK";
     }
 }
