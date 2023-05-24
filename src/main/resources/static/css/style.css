@@ -295,14 +295,14 @@ nav .nav-link:hover {
 
 .filterbutton {
     display: flex;
-    /*justify-content: center;*/
-    /*align-items: center;*/
+    justify-content: center;
+    align-items: center;
     background: #53C0D7;
     padding: 2px;
 }
 
 .filterbutton button {
-    margin-left: 30px;
+    /*margin-left: 30px;*/
 }
 
 .logoMain {
