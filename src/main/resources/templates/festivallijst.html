@@ -20,12 +20,12 @@
 
 <!--<span> <br></span>-->
 
-
+<div>
 
 <div class="filterbutton">
 
     <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-        +
+        Filter
     </button>
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -35,21 +35,16 @@
         </div>
         <div class="offcanvas-body">
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"><br>
+                <label for="keyword" class="filtername">keyword</label>
+                <input type="text" id="keyword" name="keyword" th:value="${keyword}">
+
+<!--                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"><br>-->
                 <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </div>
 
-
 </div>
-
-<div class="logoMain">
-    <div class="geleball">
-        <p>Agenda</p>
-    </div>
-</div>
-
 
 <div class="events">
 
@@ -78,7 +73,7 @@
     </div>
 </div>
 
-
+</div>
 <!--<div class="freespaceforfooter"></div>-->
 
 <div th:replace="~{/fragments/headerfooter :: footer}">Hier komt de footer</div>
