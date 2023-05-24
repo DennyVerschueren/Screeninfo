@@ -15,7 +15,8 @@ public interface FestivalRepository extends CrudRepository<Festival,Integer> {
     Optional<Festival> findFirstByIdGreaterThanOrderById(int id);
     Iterable<Festival> findAllByOrderByOnGoingDesc();
 
+    List<Festival> findByFestivalNameContainingIgnoreCase(String keyword);
 
-    @Query("SELECT a FROM Festival a WHERE :word IS NULL OR LOWER(a.festivalName) LIKE LOWER(CONCAT('%',:word,'%'))")
-    List<Festival> findByKeyword(@Param("word") String word);
+//    @Query("SELECT a FROM Festival a WHERE :word IS NULL OR LOWER(a.festivalName) LIKE LOWER(CONCAT('%',:word,'%'))")
+//    List<Festival> findByKeyword(@Param("word") String word);
 }
