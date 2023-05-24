@@ -43,8 +43,8 @@ public class AdminController {
         return "admin/festivaleditor";
     }
 
-    @PostMapping("/festivaleditor/{id}")
-    public String editFestivalPost(@Valid Festival festival, @PathVariable int id) {
+    @PostMapping({"/festivaleditor", "/festivaleditor/{id}"})
+    public String editFestivalPost(@Valid Festival festival){
         festivalRepository.save(festival);
         return "redirect:/festivallijst";
     }
@@ -57,6 +57,7 @@ public class AdminController {
 
     @PostMapping("/festivalcreator")
     public String addFestivalPost(Model model, @Valid Festival festival) {
+        festival.setPopulation(0);
         festivalRepository.save(festival);
         return "redirect:/festivallijst";
     }

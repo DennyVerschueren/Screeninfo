@@ -22,7 +22,6 @@ public class Festival {
     private String festivalLink;
     private Integer maxCapacity; // dit is voor de barometer
     private Integer population; // dit is voor hoeveel man er momenteel is
-    private boolean onGoing; // om manueel te zeggen dat een event bezig is
 
     public Festival(){
 
@@ -98,13 +97,5 @@ public class Festival {
 
     public void setPopulation(Integer population) {
         this.population = population;
-    }
-
-    public boolean isOnGoing() {
-        return onGoing;
-    }
-
-    public void setOnGoing(boolean onGoing) {
-        this.onGoing = onGoing;
     }
 }
