@@ -9,10 +9,6 @@
 <body>
 <div th:replace="~{/fragment/headerfooter :: header}"></div>
 
-<span> <br></span>
-
-
-
 <div class="events">
 
     <div th:each="festival :${festivals}" th:style="|background-color: ${festival.getBackgroundColor()}; |" class="festival">
