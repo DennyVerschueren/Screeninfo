@@ -39,6 +39,16 @@
                 <input type="text" id="keyword" name="keyword" th:value="${keyword}">
 
 <!--                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"><br>-->
+                <h3>Festival Type</h3>
+                <label for="typemusic" class="filtername">Music</label>
+                <input type="radio" id="typemusic" th:checked="${festivalType!=null && festivalType=='Music'}" value="Music" name="festivalType">
+                <label for="typesport" class="filtername">Sport</label>
+                <input type="radio" id="typesport" th:checked="${festivalType!=null && festivalType=='Sport'}" value="Sport" name="festivalType">
+                <label for="typeculture" class="filtername">Culture</label>
+                <input type="radio" id="typeculture" th:checked="${festivalType!=null && festivalType=='Culture'}" value="Culture" name="festivalType">
+                <label for="typetech" class="filtername">Technology</label>
+                <input type="radio" id="typetech" th:checked="${festivalType!=null && festivalType=='Technology'}" value="Technology" name="festivalType">
+
                 <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
