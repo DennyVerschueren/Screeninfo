@@ -20,18 +20,21 @@ public class FestivalController {
     @Autowired
     private FestivalRepository festivalRepository;
 
-    @GetMapping({"/","/festivallijst","/festivallijst/{keyword}"})
-    public String festivalList(Model model, Principal principal,@RequestParam(required = false) String keyword) {
+    @GetMapping({"/","/festivallijst","/festivallijst/{filter}"})
+    public String festivalList(Model model, Principal principal,
+                               @RequestParam(required = false) String keyword,
+                               @RequestParam(required = false) String festivalType) {
         Iterable<Festival> festivals;
 
-        if (keyword == null) {
+        if (keyword == null && festivalType==null) {
             festivals = festivalRepository.findAllByOrderByOnGoingDesc();
         }else {
-            festivals = festivalRepository.findByFestivalNameContainingIgnoreCase(keyword);
+            festivals = festivalRepository.findByQuery(keyword, festivalType);
 
         }
 
-
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("festivalType",festivalType);
         model.addAttribute("festivals", festivals);
 
         return "festivallijst";
